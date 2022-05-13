@@ -11,14 +11,13 @@ import SnapKit
 
 class InfluencerTableViewCell: UITableViewCell, Reusable {
     private var profileImageView: UIImageView!
-    var chatButton: UIButton!
+    var chatButton: SpinningButton!
     var nameLabel: UILabel!
-    var messageCountLabel: UILabel!
     var startChattingAction: (() -> Void)? = nil
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = .white
+        self.backgroundColor = .clear
         setUpInfluencerPhoto()
         setUpChatButton()
         setUpInfluencerDescription()
@@ -35,8 +34,6 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
     
     func set(imageFile: AnyObject?, name: String, messageCount: String) {
         nameLabel.text = name
-        //TODO: will need to query the Messages table to get # of messages sent. But will start with a default of 3,000
-        messageCountLabel.text = "3K"
         profileImageView.loadFromFile(imageFile)
     }
     
@@ -55,26 +52,26 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
     }
     
     private func setUpChatButton() {
-        if let image = UIImage(named: "chat_button")?.withRenderingMode(.alwaysTemplate) {
-            chatButton = UIButton()
-            chatButton.addTarget(self, action: #selector(chatButtonPressed), for: .touchUpInside)
-            chatButton.setTitle("Start Chatting", for: .normal)
-            chatButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-            chatButton.backgroundColor = .black
-            chatButton.layer.cornerRadius = 24
-            chatButton.layer.borderWidth = 3
-            chatButton.layer.borderColor = UIColor.white.cgColor
-            contentView.addSubview(chatButton)
+        if #available(iOS 15.0, *) {
+            var filled = UIButton.Configuration.filled()
+            filled.contentInsets = NSDirectionalEdgeInsets(top: 14, leading: -10, bottom: 14, trailing: 0)
+            chatButton = SpinningButton(configuration: filled)
+        } else {
+            // Fallback on earlier versions
+            chatButton = SpinningButton()
             chatButton.contentEdgeInsets = UIEdgeInsets(top: 14, left: -10, bottom: 14, right: 0)
-            chatButton.setImage(image, for: .normal)
-            chatButton.tintColor = .white
-            chatButton.imageView?.contentMode = .scaleAspectFit
-            chatButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -20)
-            chatButton.semanticContentAttribute = .forceRightToLeft
-            chatButton.snp.makeConstraints { make in
-                make.leading.trailing.equalToSuperview().inset(15)
-                make.bottom.equalTo(profileImageView.snp.bottom).inset(30)
-            }
+        }
+        
+        chatButton.addTarget(self, action: #selector(chatButtonPressed), for: .touchUpInside)
+        chatButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        chatButton.backgroundColor = .black
+        chatButton.layer.cornerRadius = 24
+        chatButton.layer.borderWidth = 3
+        chatButton.layer.borderColor = UIColor.white.cgColor
+        contentView.addSubview(chatButton)
+        chatButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(profileImageView.snp.bottom).inset(30)
         }
     }
     
@@ -90,31 +87,5 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
             make.leading.equalToSuperview()
             make.top.equalTo(profileImageView.snp.bottom).offset(5)
         }
-        
-        let subtitleLabel = UILabel()
-        subtitleLabel.text = "Messages Sent"
-        subtitleLabel.font = .systemFont(ofSize: 13, weight: .regular)
-        contentView.addSubview(subtitleLabel)
-        subtitleLabel.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview()
-            make.top.equalTo(nameLabel.snp.bottom).offset(5)
-            make.bottom.equalToSuperview().inset(10)
-        }
-        
-        messageCountLabel = UILabel()
-        messageCountLabel.font = .systemFont(ofSize: 13, weight: .bold)
-        contentView.addSubview(messageCountLabel)
-        messageCountLabel.snp.makeConstraints { (make) in
-            make.leading.equalTo(subtitleLabel.snp.trailing).offset(3)
-            make.top.bottom.equalTo(subtitleLabel)
-            let checkImage = UIImage(named: "verificationCheck")
-            let myImageView: UIImageView = UIImageView(image: checkImage)
-            myImageView.contentMode = .scaleAspectFit
-            addSubview(myImageView)
-            myImageView.snp.makeConstraints { make in
-                make.leading.equalTo(nameLabel.snp.trailing).offset(3)
-                make.top.bottom.equalTo(nameLabel)
-            }
-            }
     }
 }

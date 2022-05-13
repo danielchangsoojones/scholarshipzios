@@ -37,6 +37,7 @@ class ExploreView: UIView {
     
     private func setUpTableView() {
         tableView = UITableView()
+        tableView.backgroundColor = .clear
         addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.leading.trailing.equalTo(titleLabel)
