@@ -15,9 +15,8 @@ class ExploreView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = .blackBackground
         setUpTitleLabel()
-        setUpSubtitleLabel()
         setUpTableView()
     }
     
@@ -36,25 +35,12 @@ class ExploreView: UIView {
         }
     }
     
-    private func setUpSubtitleLabel() {
-        subTitleLabel = UILabel()
-        subTitleLabel.numberOfLines = 0
-        subTitleLabel.text = "EVERYONE’S FAVORITE INFLUENCERS"
-        subTitleLabel.font = .systemFont(ofSize: 18, weight: .black)
-        subTitleLabel.textAlignment = .left
-        addSubview(subTitleLabel)
-        subTitleLabel.snp.makeConstraints { (make) in
-            make.leading.trailing.equalTo(titleLabel)
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
-        }
-    }
-    
     private func setUpTableView() {
         tableView = UITableView()
         addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.leading.trailing.equalTo(titleLabel)
-            make.top.equalTo(subTitleLabel.snp.bottom).offset(12)
+            make.top.equalTo(titleLabel.snp.bottom).offset(12)
             make.bottom.equalToSuperview()
         }
     }
