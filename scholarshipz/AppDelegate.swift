@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,13 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setUpServer() {
-//        let configuration = ParseClientConfiguration {
-//            $0.applicationId = Configuration.environment.appID
-//            $0.server = Configuration.environment.serverURL
-//        }
-//        Parse.initialize(with: configuration)
-//
-//        //configure Stripe
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = Configuration.environment.appID
+            $0.server = Configuration.environment.serverURL
+        }
+        Parse.initialize(with: configuration)
+
+        //configure Stripe
 //        STPAPIClient.shared.publishableKey = Configuration.environment.stripePublishableKey
     }
 }
