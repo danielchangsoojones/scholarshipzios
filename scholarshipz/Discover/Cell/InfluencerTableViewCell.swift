@@ -52,22 +52,24 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
     }
     
     private func setUpChatButton() {
+        let edgeInsets = UIEdgeInsets(top: 10, left: 14, bottom: 10, right: 14)
         if #available(iOS 15.0, *) {
-            var filled = UIButton.Configuration.filled()
-            filled.contentInsets = NSDirectionalEdgeInsets(top: 14, leading: -10, bottom: 14, trailing: 0)
+            var filled = UIButton.Configuration.plain()
+            filled.contentInsets = NSDirectionalEdgeInsets(top: edgeInsets.top,
+                                                           leading: edgeInsets.left,
+                                                           bottom: edgeInsets.bottom,
+                                                           trailing: edgeInsets.right)
             chatButton = SpinningButton(configuration: filled)
         } else {
             // Fallback on earlier versions
             chatButton = SpinningButton()
-            chatButton.contentEdgeInsets = UIEdgeInsets(top: 14, left: -10, bottom: 14, right: 0)
+            chatButton.contentEdgeInsets = edgeInsets
         }
         
         chatButton.addTarget(self, action: #selector(chatButtonPressed), for: .touchUpInside)
         chatButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        chatButton.backgroundColor = .black
-        chatButton.layer.cornerRadius = 24
-        chatButton.layer.borderWidth = 3
-        chatButton.layer.borderColor = UIColor.white.cgColor
+        //TODO: add the gradient
+        chatButton.backgroundColor = .lightPurple
         contentView.addSubview(chatButton)
         chatButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
