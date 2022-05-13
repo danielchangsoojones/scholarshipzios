@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     private func setStartingVC() {
-        let vc = ViewController()
+        let vc = ExploreViewController()
         let navController = UINavigationController(rootViewController: vc)
         set(startingVC: navController)
     }
