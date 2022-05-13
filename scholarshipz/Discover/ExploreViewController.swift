@@ -68,8 +68,7 @@ extension ExploreViewController: UITableViewDataSource, UITableViewDelegate {
         }
         cell.chatButton.setTitle(influencer.fullName, for: .normal)
         cell.set(imageFile: influencer.discoverPhoto,
-                 name: influencer.fullName,
-                 messageCount: "5K")
+                 name: influencer.fullName)
         return cell
     }
     

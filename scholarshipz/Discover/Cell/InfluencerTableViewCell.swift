@@ -32,22 +32,22 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
         profileImageView.image = nil
     }
     
-    func set(imageFile: AnyObject?, name: String, messageCount: String) {
+    func set(imageFile: AnyObject?, name: String) {
         nameLabel.text = name
         profileImageView.loadFromFile(imageFile)
     }
     
     private func setUpInfluencerPhoto() {
         profileImageView = UIImageView()
-        profileImageView.contentMode = .scaleAspectFit
+        profileImageView.contentMode = .scaleAspectFill
         profileImageView.layer.cornerRadius = 30
         profileImageView.clipsToBounds = true
         contentView.addSubview(profileImageView)
-        let imageDimension = UIScreen.main.bounds.width - 40
         profileImageView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.centerX.equalToSuperview()
-            make.width.height.equalTo(imageDimension)
+            make.top.bottom.equalToSuperview()
+            //the height breaks if it isn't a whole number
+            make.height.equalTo(Int(UIScreen.main.bounds.height * 0.7))
+            make.leading.trailing.equalToSuperview().inset(5)
         }
     }
     
@@ -86,8 +86,8 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
         nameLabel.font = .systemFont(ofSize: 16, weight: .bold)
         contentView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview()
-            make.top.equalTo(profileImageView.snp.bottom).offset(5)
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(chatButton.snp.top).offset(-10)
         }
     }
 }
