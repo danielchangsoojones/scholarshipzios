@@ -66,7 +66,6 @@ extension ExploreViewController: UITableViewDataSource, UITableViewDelegate {
         cell.startChattingAction = {
             
         }
-        cell.chatButton.setTitle(influencer.fullName, for: .normal)
         cell.set(imageFile: influencer.discoverPhoto,
                  name: influencer.fullName)
         return cell
