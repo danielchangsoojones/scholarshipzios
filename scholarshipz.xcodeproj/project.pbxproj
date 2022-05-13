@@ -12,6 +12,7 @@
 		9227195A282EBB9C009ACE70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92271959282EBB9C009ACE70 /* ViewController.swift */; };
 		9227195F282EBBA3009ACE70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9227195E282EBBA3009ACE70 /* Assets.xcassets */; };
 		92271962282EBBA3009ACE70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92271960282EBBA3009ACE70 /* LaunchScreen.storyboard */; };
+		9227196B282EC291009ACE70 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9227196A282EC291009ACE70 /* Enviroment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		9227195E282EBBA3009ACE70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92271961282EBBA3009ACE70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92271963282EBBA3009ACE70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9227196A282EC291009ACE70 /* Enviroment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
 		9CEB852CD6AEA563472A7ABC /* Pods-scholarshipz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scholarshipz.debug.xcconfig"; path = "Target Support Files/Pods-scholarshipz/Pods-scholarshipz.debug.xcconfig"; sourceTree = "<group>"; };
 		EA14BE911A60F4D837DCE45F /* Pods-scholarshipz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scholarshipz.release.xcconfig"; path = "Target Support Files/Pods-scholarshipz/Pods-scholarshipz.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 		92271954282EBB9C009ACE70 /* scholarshipz */ = {
 			isa = PBXGroup;
 			children = (
+				92271969282EC283009ACE70 /* Models */,
 				92271955282EBB9C009ACE70 /* AppDelegate.swift */,
 				92271959282EBB9C009ACE70 /* ViewController.swift */,
 				9227195E282EBBA3009ACE70 /* Assets.xcassets */,
@@ -83,6 +86,14 @@
 				92271963282EBBA3009ACE70 /* Info.plist */,
 			);
 			path = scholarshipz;
+			sourceTree = "<group>";
+		};
+		92271969282EC283009ACE70 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9227196A282EC291009ACE70 /* Enviroment.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 			files = (
 				9227195A282EBB9C009ACE70 /* ViewController.swift in Sources */,
 				92271956282EBB9C009ACE70 /* AppDelegate.swift in Sources */,
+				9227196B282EC291009ACE70 /* Enviroment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
