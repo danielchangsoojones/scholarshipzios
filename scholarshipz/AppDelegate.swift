@@ -31,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.applicationId = Configuration.environment.appID
             $0.server = Configuration.environment.serverURL
         }
+        
+        print(Configuration.environment.appID)
+        print(Configuration.environment.serverURL)
         Parse.initialize(with: configuration)
 
         //configure Stripe

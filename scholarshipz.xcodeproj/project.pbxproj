@@ -17,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		0A2CCA08318A2BC173419D0B /* Pods_scholarshipz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_scholarshipz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67A62398D788BA6FCFAF542D /* Pods-scholarshipz.debug(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scholarshipz.debug(production).xcconfig"; path = "Target Support Files/Pods-scholarshipz/Pods-scholarshipz.debug(production).xcconfig"; sourceTree = "<group>"; };
 		92271952282EBB9C009ACE70 /* scholarshipz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scholarshipz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92271955282EBB9C009ACE70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92271959282EBB9C009ACE70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,6 +26,7 @@
 		92271963282EBBA3009ACE70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9227196A282EC291009ACE70 /* Enviroment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
 		9CEB852CD6AEA563472A7ABC /* Pods-scholarshipz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scholarshipz.debug.xcconfig"; path = "Target Support Files/Pods-scholarshipz/Pods-scholarshipz.debug.xcconfig"; sourceTree = "<group>"; };
+		AA6DEC556866EB11826E67D4 /* Pods-scholarshipz.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scholarshipz.debug(development).xcconfig"; path = "Target Support Files/Pods-scholarshipz/Pods-scholarshipz.debug(development).xcconfig"; sourceTree = "<group>"; };
 		EA14BE911A60F4D837DCE45F /* Pods-scholarshipz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scholarshipz.release.xcconfig"; path = "Target Support Files/Pods-scholarshipz/Pods-scholarshipz.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +47,8 @@
 			children = (
 				9CEB852CD6AEA563472A7ABC /* Pods-scholarshipz.debug.xcconfig */,
 				EA14BE911A60F4D837DCE45F /* Pods-scholarshipz.release.xcconfig */,
+				AA6DEC556866EB11826E67D4 /* Pods-scholarshipz.debug(development).xcconfig */,
+				67A62398D788BA6FCFAF542D /* Pods-scholarshipz.debug(production).xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -346,7 +350,7 @@
 		};
 		92271967282EBBA3009ACE70 /* Debug(Development) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CEB852CD6AEA563472A7ABC /* Pods-scholarshipz.debug.xcconfig */;
+			baseConfigurationReference = AA6DEC556866EB11826E67D4 /* Pods-scholarshipz.debug(development).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,7 +466,7 @@
 		};
 		9227196F282ED47C009ACE70 /* Debug(Production) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CEB852CD6AEA563472A7ABC /* Pods-scholarshipz.debug.xcconfig */;
+			baseConfigurationReference = 67A62398D788BA6FCFAF542D /* Pods-scholarshipz.debug(production).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
