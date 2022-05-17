@@ -12,6 +12,10 @@
 		9227195F282EBBA3009ACE70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9227195E282EBBA3009ACE70 /* Assets.xcassets */; };
 		92271962282EBBA3009ACE70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92271960282EBBA3009ACE70 /* LaunchScreen.storyboard */; };
 		9227196B282EC291009ACE70 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9227196A282EC291009ACE70 /* Enviroment.swift */; };
+		922DFB18283429A9009B03C5 /* StoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB17283429A9009B03C5 /* StoreDataStore.swift */; };
+		922DFB1A28342A11009B03C5 /* StoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB1928342A11009B03C5 /* StoreItem.swift */; };
+		922DFB1C28342A4A009B03C5 /* StorePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB1B28342A4A009B03C5 /* StorePhoto.swift */; };
+		922DFB1E28342BDD009B03C5 /* NumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB1D28342BDD009B03C5 /* NumberExtension.swift */; };
 		924E4F25282EE490004DD18E /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F23282EE490004DD18E /* ExploreView.swift */; };
 		924E4F26282EE490004DD18E /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F24282EE490004DD18E /* ExploreViewController.swift */; };
 		924E4F29282EE4A5004DD18E /* InfluencerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F28282EE4A5004DD18E /* InfluencerTableViewCell.swift */; };
@@ -36,6 +40,10 @@
 		92271961282EBBA3009ACE70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92271963282EBBA3009ACE70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9227196A282EC291009ACE70 /* Enviroment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
+		922DFB17283429A9009B03C5 /* StoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDataStore.swift; sourceTree = "<group>"; };
+		922DFB1928342A11009B03C5 /* StoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItem.swift; sourceTree = "<group>"; };
+		922DFB1B28342A4A009B03C5 /* StorePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePhoto.swift; sourceTree = "<group>"; };
+		922DFB1D28342BDD009B03C5 /* NumberExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberExtension.swift; sourceTree = "<group>"; };
 		924E4F23282EE490004DD18E /* ExploreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		924E4F24282EE490004DD18E /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		924E4F28282EE4A5004DD18E /* InfluencerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfluencerTableViewCell.swift; sourceTree = "<group>"; };
@@ -124,8 +132,18 @@
 				924E4F34282EE5DC004DD18E /* SuperParseObject.swift */,
 				9227196A282EC291009ACE70 /* Enviroment.swift */,
 				924E4F32282EE592004DD18E /* InfluencerParse.swift */,
+				922DFB1928342A11009B03C5 /* StoreItem.swift */,
+				922DFB1B28342A4A009B03C5 /* StorePhoto.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		922DFB1628342995009B03C5 /* Data Store */ = {
+			isa = PBXGroup;
+			children = (
+				922DFB17283429A9009B03C5 /* StoreDataStore.swift */,
+			);
+			path = "Data Store";
 			sourceTree = "<group>";
 		};
 		924E4F22282EE40E004DD18E /* Discover */ = {
@@ -162,6 +180,7 @@
 				924E4F30282EE541004DD18E /* Structs.swift */,
 				924E4F2E282EE520004DD18E /* ImageViewExtension.swift */,
 				924E4F36282EEAD2004DD18E /* ColorExtension.swift */,
+				922DFB1D28342BDD009B03C5 /* NumberExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -169,6 +188,7 @@
 		924E4F3B28335E81004DD18E /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				922DFB1628342995009B03C5 /* Data Store */,
 				924E4F4028336647004DD18E /* Cell */,
 				924E4F3C28335E9E004DD18E /* StoreViewController.swift */,
 				924E4F3E28335EAD004DD18E /* StoreView.swift */,
@@ -301,9 +321,12 @@
 				924E4F31282EE541004DD18E /* Structs.swift in Sources */,
 				924E4F39282EED03004DD18E /* SpinningButton.swift in Sources */,
 				924E4F2C282EE4B6004DD18E /* ExploreDataStore.swift in Sources */,
+				922DFB18283429A9009B03C5 /* StoreDataStore.swift in Sources */,
 				924E4F2F282EE520004DD18E /* ImageViewExtension.swift in Sources */,
 				92271956282EBB9C009ACE70 /* AppDelegate.swift in Sources */,
 				924E4F29282EE4A5004DD18E /* InfluencerTableViewCell.swift in Sources */,
+				922DFB1A28342A11009B03C5 /* StoreItem.swift in Sources */,
+				922DFB1C28342A4A009B03C5 /* StorePhoto.swift in Sources */,
 				924E4F3D28335E9E004DD18E /* StoreViewController.swift in Sources */,
 				924E4F26282EE490004DD18E /* ExploreViewController.swift in Sources */,
 				924E4F25282EE490004DD18E /* ExploreView.swift in Sources */,
@@ -312,6 +335,7 @@
 				924E4F37282EEAD2004DD18E /* ColorExtension.swift in Sources */,
 				924E4F3F28335EAD004DD18E /* StoreView.swift in Sources */,
 				9227196B282EC291009ACE70 /* Enviroment.swift in Sources */,
+				922DFB1E28342BDD009B03C5 /* NumberExtension.swift in Sources */,
 				924E4F4228336665004DD18E /* StoreItemCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

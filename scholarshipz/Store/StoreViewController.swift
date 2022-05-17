@@ -10,6 +10,8 @@ import UIKit
 class StoreViewController: UIViewController {
     private var collectionView: UICollectionView!
     private let influencer: InfluencerParse
+    private let dataStore = StoreDataStore()
+    private var storeItems: [StoreItemParse] = []
     
     init(influencer: InfluencerParse) {
         self.influencer = influencer
@@ -33,8 +35,18 @@ class StoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setCollectionView()
+        loadStoreItems()
     }
     
+    private func loadStoreItems() {
+        dataStore.getStoreItems(for: influencer) { storeItems in
+            self.storeItems = storeItems
+            self.collectionView.reloadData()
+        }
+    }
+}
+
+extension StoreViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     private func setCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -50,18 +62,15 @@ class StoreViewController: UIViewController {
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 50
+        return storeItems.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let storeItem = storeItems[indexPath.row]
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: StoreItemCollectionCell.self)
-        cell.imgView.loadFromFile(influencer.discoverPhoto)
-        cell.titleLabel.text = "Test shirt"
-        cell.priceLabel.text = "$" + "24.99"
+        cell.imgView.loadFromFile(storeItem.coverPhoto.photo)
+        cell.titleLabel.text = storeItem.title
+        cell.priceLabel.text = storeItem.price.toPrice
         return cell
     }
-}
-
-extension StoreViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
 }

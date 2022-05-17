@@ -33,7 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         Parse.initialize(with: configuration)
-
+        InfluencerParse.registerSubclass()
+        StoreItemParse.registerSubclass()
+        StorePhotoParse.registerSubclass()
+        
         //configure Stripe
 //        STPAPIClient.shared.publishableKey = Configuration.environment.stripePublishableKey
     }
