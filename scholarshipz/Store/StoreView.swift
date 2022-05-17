@@ -16,6 +16,7 @@ class StoreView: UIView {
         super.init(frame: frame)
         self.backgroundColor = .blackBackground
         createTopBanner()
+        setCollectionView()
     }
     
     required init?(coder: NSCoder) {
@@ -48,6 +49,19 @@ class StoreView: UIView {
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(nameLabel).offset(-5)
             make.bottom.equalToSuperview()
+        }
+    }
+    
+    private func setCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 5
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(bannerImgView.snp.bottom)
         }
     }
 }

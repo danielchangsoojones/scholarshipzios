@@ -27,12 +27,39 @@ class StoreViewController: UIViewController {
         self.collectionView = storeView.collectionView
         storeView.nameLabel.text = influencer.fullName
         storeView.bannerImgView.loadFromFile(influencer.bannerPhoto)
+        setCollectionView()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setCollectionView()
+    }
+    
+    private func setCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
+        let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
+        let size: CGFloat = (self.view.frame.size.width - space) / 2.0
+        return CGSize(width: size, height: size)
     }
 
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 50
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "testcell", for: indexPath)
+        let cell = UICollectionViewCell()
+        cell.backgroundColor = UIColor.red
+        return cell
+    }
+}
+
+extension StoreViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
 }
