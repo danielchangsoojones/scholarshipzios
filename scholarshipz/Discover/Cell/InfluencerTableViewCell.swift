@@ -89,7 +89,8 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
     
     private func setUpInfluencerDescription() {
         nameLabel = UILabel()
-        nameLabel.font = .systemFont(ofSize: 16, weight: .bold)
+        nameLabel.textColor = .white
+        nameLabel.font = .systemFont(ofSize: 25, weight: .medium)
         contentView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
@@ -127,24 +128,5 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
             make.leading.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-    }
-}
-
-extension UIView{
-    func createGradientBlur() {
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.colors = [
-//        UIColor.black.withAlphaComponent(0).cgColor,
-//        UIColor.black.withAlphaComponent(1).cgColor]
-//        let viewEffect = UIBlurEffect(style: .dark)
-//        let effectView = UIVisualEffectView(effect: viewEffect)
-//        effectView.frame = CGRect(x: self.bounds.origin.x, y: self.bounds.size.height, width: self.bounds.width, height: self.bounds.size.height)
-//        gradientLayer.frame = effectView.bounds
-//        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-//        gradientLayer.endPoint = CGPoint(x: 0.0 , y: 0.3)
-//        effectView.autoresizingMask = [.flexibleHeight]
-//        effectView.layer.mask = gradientLayer
-//        effectView.isUserInteractionEnabled = false //Use this to pass touches under this blur effect
-//        addSubview(effectView)
     }
 }
