@@ -14,6 +14,12 @@ class ExploreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadInfluencers()
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 38))
+        imageView.contentMode = .scaleAspectFit
+        let logo = UIImage(named: "logo_name")
+        imageView.image = logo
+        self.navigationItem.titleView = imageView
     }
     
     override func loadView() {
@@ -26,13 +32,7 @@ class ExploreViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        loadInfluencers()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
     }
     
     private func setup(_ tableView: UITableView) {

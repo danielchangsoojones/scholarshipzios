@@ -28,7 +28,7 @@ class ExploreView: UIView {
         tableView.backgroundColor = .clear
         addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.snp_topMargin)
+            make.top.equalTo(self.snp_topMargin).offset(10)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }

@@ -15,7 +15,7 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
     var nameLabel: UILabel!
     private let backgroundBlur = UIView()
     
-    private let profilePhotoHeight = Int(UIScreen.main.bounds.height * 0.85)
+    private let profilePhotoHeight = Int(UIScreen.main.bounds.height * 0.75)
     private let widthInset: CGFloat = 5
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
