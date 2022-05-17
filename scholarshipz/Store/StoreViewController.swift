@@ -38,6 +38,7 @@ class StoreViewController: UIViewController {
     private func setCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.register(cellType: StoreItemCollectionCell.self)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -53,8 +54,7 @@ class StoreViewController: UIViewController {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "testcell", for: indexPath)
-        let cell = UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: StoreItemCollectionCell.self)
         cell.backgroundColor = UIColor.red
         return cell
     }

@@ -24,6 +24,7 @@
 		924E4F39282EED03004DD18E /* SpinningButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F38282EED03004DD18E /* SpinningButton.swift */; };
 		924E4F3D28335E9E004DD18E /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F3C28335E9E004DD18E /* StoreViewController.swift */; };
 		924E4F3F28335EAD004DD18E /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F3E28335EAD004DD18E /* StoreView.swift */; };
+		924E4F4228336665004DD18E /* StoreItemCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F4128336665004DD18E /* StoreItemCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		924E4F38282EED03004DD18E /* SpinningButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinningButton.swift; sourceTree = "<group>"; };
 		924E4F3C28335E9E004DD18E /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		924E4F3E28335EAD004DD18E /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		924E4F4128336665004DD18E /* StoreItemCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemCollectionCell.swift; sourceTree = "<group>"; };
 		9CEB852CD6AEA563472A7ABC /* Pods-scholarshipz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scholarshipz.debug.xcconfig"; path = "Target Support Files/Pods-scholarshipz/Pods-scholarshipz.debug.xcconfig"; sourceTree = "<group>"; };
 		AA6DEC556866EB11826E67D4 /* Pods-scholarshipz.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scholarshipz.debug(development).xcconfig"; path = "Target Support Files/Pods-scholarshipz/Pods-scholarshipz.debug(development).xcconfig"; sourceTree = "<group>"; };
 		EA14BE911A60F4D837DCE45F /* Pods-scholarshipz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scholarshipz.release.xcconfig"; path = "Target Support Files/Pods-scholarshipz/Pods-scholarshipz.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,10 +169,19 @@
 		924E4F3B28335E81004DD18E /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				924E4F4028336647004DD18E /* Cell */,
 				924E4F3C28335E9E004DD18E /* StoreViewController.swift */,
 				924E4F3E28335EAD004DD18E /* StoreView.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		924E4F4028336647004DD18E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				924E4F4128336665004DD18E /* StoreItemCollectionCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +312,7 @@
 				924E4F37282EEAD2004DD18E /* ColorExtension.swift in Sources */,
 				924E4F3F28335EAD004DD18E /* StoreView.swift in Sources */,
 				9227196B282EC291009ACE70 /* Enviroment.swift in Sources */,
+				924E4F4228336665004DD18E /* StoreItemCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

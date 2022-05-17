@@ -58,6 +58,7 @@ class StoreView: UIView {
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
         addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
