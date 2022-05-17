@@ -13,8 +13,7 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
     private var profileImageView: UIImageView!
     var chatButton: SpinningButton!
     var nameLabel: UILabel!
-    var startChattingAction: (() -> Void)? = nil
-    var backgroundBlur = UIView()
+    private let backgroundBlur = UIView()
     
     private let profilePhotoHeight = Int(UIScreen.main.bounds.height * 0.7)
     private let widthInset: CGFloat = 5
@@ -71,20 +70,16 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
             chatButton.contentEdgeInsets = edgeInsets
         }
         
-        chatButton.addTarget(self, action: #selector(chatButtonPressed), for: .touchUpInside)
         chatButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         //TODO: add the gradient
         chatButton.backgroundColor = .lightPurple
         chatButton.setTitle("View Gear", for: .normal)
+        chatButton.isUserInteractionEnabled = false
         contentView.addSubview(chatButton)
         chatButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(profileImageView.snp.bottom).inset(30)
         }
-    }
-    
-    @objc private func chatButtonPressed() {
-        startChattingAction?()
     }
     
     private func setUpInfluencerDescription() {

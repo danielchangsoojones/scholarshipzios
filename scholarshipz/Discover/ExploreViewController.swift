@@ -63,9 +63,6 @@ extension ExploreViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: InfluencerTableViewCell.self)
         let influencer = influencers[indexPath.row]
         cell.selectionStyle = .none
-        cell.startChattingAction = {
-            
-        }
         cell.set(imageFile: influencer.discoverPhoto,
                  name: influencer.fullName)
         return cell
@@ -77,5 +74,10 @@ extension ExploreViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let influencer = influencers[indexPath.row]
+        print("hi")
     }
 }
