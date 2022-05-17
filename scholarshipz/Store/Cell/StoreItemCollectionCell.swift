@@ -48,7 +48,7 @@ class StoreItemCollectionCell: UICollectionViewCell, Reusable {
     
     private func setPriceLabel() {
         priceLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        priceLabel.textColor = .lightPurple
+        priceLabel.textColor = .babyPurple
         contentView.addSubview(priceLabel)
         priceLabel.snp.makeConstraints { make in
             make.leading.equalTo(imgView)
