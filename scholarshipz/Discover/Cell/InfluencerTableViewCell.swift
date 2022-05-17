@@ -14,6 +14,10 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
     var chatButton: SpinningButton!
     var nameLabel: UILabel!
     var startChattingAction: (() -> Void)? = nil
+    var backgroundBlur = UIView()
+    
+    private let profilePhotoHeight = Int(UIScreen.main.bounds.height * 0.7)
+    private let widthInset: CGFloat = 5
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -21,6 +25,7 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
         setUpInfluencerPhoto()
         setUpChatButton()
         setUpInfluencerDescription()
+        setBackgroundBlur()
     }
     
     required init?(coder: NSCoder) {
@@ -46,8 +51,8 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
         profileImageView.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
             //the height breaks if it isn't a whole number
-            make.height.equalTo(Int(UIScreen.main.bounds.height * 0.7))
-            make.leading.trailing.equalToSuperview().inset(5)
+            make.height.equalTo(profilePhotoHeight)
+            make.leading.trailing.equalToSuperview().inset(widthInset)
         }
     }
     
@@ -90,5 +95,56 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
             make.centerX.equalToSuperview()
             make.bottom.equalTo(chatButton.snp.top).offset(-10)
         }
+    }
+    
+    private func setBackgroundBlur() {
+        //got this code from Figma
+        let view = UIView()
+        view.frame = CGRect(x: 0,
+                            y: 0,
+                            width: UIScreen.main.bounds.width,
+                            height: CGFloat(profilePhotoHeight))
+        view.backgroundColor = .clear
+
+        let layer0 = CAGradientLayer()
+        layer0.colors = [
+          UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor,
+          UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+        ]
+
+        layer0.locations = [0, 1]
+        layer0.startPoint = CGPoint(x: 0.25, y: 0.5)
+        layer0.endPoint = CGPoint(x: 0.75, y: 0.5)
+        layer0.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 0, b: 0.86, c: -0.86, d: 0, tx: 0.93, ty: -0.24))
+        layer0.bounds = view.bounds.insetBy(dx: -0.5 * view.bounds.size.width, dy: -0.5 * view.bounds.size.height)
+        layer0.position = view.center
+        view.layer.addSublayer(layer0)
+
+        self.profileImageView.addSubview(view)
+        view.snp.makeConstraints { make in
+            make.width.equalTo(view.frame.width)
+            make.height.equalTo(view.frame.height)
+            make.leading.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+    }
+}
+
+extension UIView{
+    func createGradientBlur() {
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.colors = [
+//        UIColor.black.withAlphaComponent(0).cgColor,
+//        UIColor.black.withAlphaComponent(1).cgColor]
+//        let viewEffect = UIBlurEffect(style: .dark)
+//        let effectView = UIVisualEffectView(effect: viewEffect)
+//        effectView.frame = CGRect(x: self.bounds.origin.x, y: self.bounds.size.height, width: self.bounds.width, height: self.bounds.size.height)
+//        gradientLayer.frame = effectView.bounds
+//        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+//        gradientLayer.endPoint = CGPoint(x: 0.0 , y: 0.3)
+//        effectView.autoresizingMask = [.flexibleHeight]
+//        effectView.layer.mask = gradientLayer
+//        effectView.isUserInteractionEnabled = false //Use this to pass touches under this blur effect
+//        addSubview(effectView)
     }
 }
