@@ -23,6 +23,7 @@ class StoreViewController: UIViewController {
     override func loadView() {
         super.loadView()
         let storeView = StoreView(frame: self.view.frame)
+        self.view = storeView
         self.collectionView = storeView.collectionView
         storeView.nameLabel.text = influencer.fullName
         storeView.bannerImgView.loadFromFile(influencer.bannerPhoto)
