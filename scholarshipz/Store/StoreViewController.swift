@@ -45,7 +45,7 @@ class StoreViewController: UIViewController {
         let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
         let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
         let size: CGFloat = (self.view.frame.size.width - space) / 2.0
-        return CGSize(width: size, height: size)
+        return CGSize(width: size, height: 200)
     }
 
     
@@ -55,7 +55,8 @@ class StoreViewController: UIViewController {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: StoreItemCollectionCell.self)
-        cell.backgroundColor = UIColor.red
+        cell.imgView.loadFromFile(influencer.discoverPhoto)
+        cell.titleLabel.text = "Test shirt"
         return cell
     }
 }
