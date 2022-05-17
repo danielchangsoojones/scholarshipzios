@@ -12,6 +12,14 @@ class ExploreViewController: UIViewController {
     private var influencers: [InfluencerParse] = []
     private let dataStore = ExploreDataStore()
     
+    override func loadView() {
+        super.loadView()
+        let exploreView = ExploreView(frame: self.view.frame)
+        self.view = exploreView
+        self.tableView = exploreView.tableView
+        setup(exploreView.tableView)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadInfluencers()
@@ -20,14 +28,6 @@ class ExploreViewController: UIViewController {
         let logo = UIImage(named: "logo_name")
         imageView.image = logo
         self.navigationItem.titleView = imageView
-    }
-    
-    override func loadView() {
-        super.loadView()
-        let exploreView = ExploreView(frame: self.view.frame)
-        self.view = exploreView
-        self.tableView = exploreView.tableView
-        setup(exploreView.tableView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
