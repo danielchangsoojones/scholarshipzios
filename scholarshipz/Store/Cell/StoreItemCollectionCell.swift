@@ -51,8 +51,8 @@ class StoreItemCollectionCell: UICollectionViewCell, Reusable {
         priceLabel.textColor = .babyPurple
         contentView.addSubview(priceLabel)
         priceLabel.snp.makeConstraints { make in
-            make.leading.equalTo(imgView)
-            make.top.equalTo(imgView.snp.bottom).offset(5)
+            make.leading.equalTo(titleLabel)
+            make.top.equalTo(titleLabel.snp.bottom).offset(2)
         }
     }
 }
