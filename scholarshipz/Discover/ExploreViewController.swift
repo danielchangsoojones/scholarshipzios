@@ -78,6 +78,7 @@ extension ExploreViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let influencer = influencers[indexPath.row]
-        print("hi")
+        let storeVC = StoreViewController(influencer: influencer)
+        navigationController?.pushViewController(storeVC, animated: true)
     }
 }

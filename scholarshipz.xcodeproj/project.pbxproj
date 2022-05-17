@@ -22,6 +22,8 @@
 		924E4F35282EE5DC004DD18E /* SuperParseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F34282EE5DC004DD18E /* SuperParseObject.swift */; };
 		924E4F37282EEAD2004DD18E /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F36282EEAD2004DD18E /* ColorExtension.swift */; };
 		924E4F39282EED03004DD18E /* SpinningButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F38282EED03004DD18E /* SpinningButton.swift */; };
+		924E4F3D28335E9E004DD18E /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F3C28335E9E004DD18E /* StoreViewController.swift */; };
+		924E4F3F28335EAD004DD18E /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F3E28335EAD004DD18E /* StoreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		924E4F34282EE5DC004DD18E /* SuperParseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperParseObject.swift; sourceTree = "<group>"; };
 		924E4F36282EEAD2004DD18E /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		924E4F38282EED03004DD18E /* SpinningButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinningButton.swift; sourceTree = "<group>"; };
+		924E4F3C28335E9E004DD18E /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		924E4F3E28335EAD004DD18E /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		9CEB852CD6AEA563472A7ABC /* Pods-scholarshipz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scholarshipz.debug.xcconfig"; path = "Target Support Files/Pods-scholarshipz/Pods-scholarshipz.debug.xcconfig"; sourceTree = "<group>"; };
 		AA6DEC556866EB11826E67D4 /* Pods-scholarshipz.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scholarshipz.debug(development).xcconfig"; path = "Target Support Files/Pods-scholarshipz/Pods-scholarshipz.debug(development).xcconfig"; sourceTree = "<group>"; };
 		EA14BE911A60F4D837DCE45F /* Pods-scholarshipz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scholarshipz.release.xcconfig"; path = "Target Support Files/Pods-scholarshipz/Pods-scholarshipz.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 		92271954282EBB9C009ACE70 /* scholarshipz */ = {
 			isa = PBXGroup;
 			children = (
+				924E4F3B28335E81004DD18E /* Store */,
 				924E4F2D282EE50E004DD18E /* Helpers */,
 				924E4F22282EE40E004DD18E /* Discover */,
 				92271969282EC283009ACE70 /* Models */,
@@ -157,6 +162,15 @@
 				924E4F36282EEAD2004DD18E /* ColorExtension.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		924E4F3B28335E81004DD18E /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				924E4F3C28335E9E004DD18E /* StoreViewController.swift */,
+				924E4F3E28335EAD004DD18E /* StoreView.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,11 +293,13 @@
 				924E4F2F282EE520004DD18E /* ImageViewExtension.swift in Sources */,
 				92271956282EBB9C009ACE70 /* AppDelegate.swift in Sources */,
 				924E4F29282EE4A5004DD18E /* InfluencerTableViewCell.swift in Sources */,
+				924E4F3D28335E9E004DD18E /* StoreViewController.swift in Sources */,
 				924E4F26282EE490004DD18E /* ExploreViewController.swift in Sources */,
 				924E4F25282EE490004DD18E /* ExploreView.swift in Sources */,
 				924E4F33282EE592004DD18E /* InfluencerParse.swift in Sources */,
 				924E4F35282EE5DC004DD18E /* SuperParseObject.swift in Sources */,
 				924E4F37282EEAD2004DD18E /* ColorExtension.swift in Sources */,
+				924E4F3F28335EAD004DD18E /* StoreView.swift in Sources */,
 				9227196B282EC291009ACE70 /* Enviroment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
