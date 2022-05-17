@@ -14,6 +14,7 @@ class StoreView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .blackBackground
         createTopBanner()
     }
     
