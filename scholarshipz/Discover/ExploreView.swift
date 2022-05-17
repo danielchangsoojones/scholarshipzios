@@ -16,7 +16,6 @@ class ExploreView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .blackBackground
-        setUpTitleLabel()
         setUpTableView()
     }
     
@@ -24,24 +23,13 @@ class ExploreView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setUpTitleLabel() {
-        titleLabel = UILabel()
-        titleLabel.text = "Discover"
-        titleLabel.font = .systemFont(ofSize: 36, weight: .regular)
-        addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { (make) in
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.top.equalTo(self.snp.topMargin).inset(30)
-        }
-    }
-    
     private func setUpTableView() {
         tableView = UITableView()
         tableView.backgroundColor = .clear
         addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
-            make.leading.trailing.equalTo(titleLabel)
-            make.top.equalTo(titleLabel.snp.bottom).offset(12)
+            make.top.equalTo(self.snp_topMargin)
+            make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
     }
