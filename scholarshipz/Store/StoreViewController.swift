@@ -13,6 +13,10 @@ class StoreViewController: UIViewController {
     private let dataStore = StoreDataStore()
     private var storeItems: [StoreItemParse] = []
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     init(influencer: InfluencerParse) {
         self.influencer = influencer
         super.init(nibName: nil, bundle: nil)

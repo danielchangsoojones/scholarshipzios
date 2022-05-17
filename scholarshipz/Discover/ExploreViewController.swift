@@ -12,6 +12,10 @@ class ExploreViewController: UIViewController {
     private var influencers: [InfluencerParse] = []
     private let dataStore = ExploreDataStore()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func loadView() {
         super.loadView()
         let exploreView = ExploreView(frame: self.view.frame)
