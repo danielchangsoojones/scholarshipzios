@@ -97,12 +97,11 @@ class StoreItemView: UIView {
     private func setSizeStackView() {
         bottomView.addSubview(sizeStackView)
         sizeStackView.axis = .horizontal
-        sizeStackView.distribution = .equalCentering
-        sizeStackView.spacing = 5
+        sizeStackView.distribution = .fill
+        sizeStackView.spacing = 35
         sizeStackView.alignment = .center
         sizeStackView.snp.makeConstraints { make in
             make.leading.equalTo(sizeLabel)
-            make.trailing.equalToSuperview()
             make.top.equalTo(sizeLabel.snp.bottom).offset(verticalOffset)
         }
     }

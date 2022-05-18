@@ -8,21 +8,21 @@
 import UIKit
 
 class StoreItemViewController: UIViewController {
-//    private let storeItem: StoreItemParse
+    private let storeItem: StoreItemParse
     var itemImgView: UIImageView!
     var nameLabel: UILabel!
     var descriptionLabel: UILabel!
     var sizeStackView = UIStackView()
     var priceLabel: UILabel!
     
-//    init(storeItem: StoreItemParse) {
-//        self.storeItem = storeItem
-//        super.init(nibName: nil, bundle: nil)
-//    }
+    init(storeItem: StoreItemParse) {
+        self.storeItem = storeItem
+        super.init(nibName: nil, bundle: nil)
+    }
     
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         super.loadView()
@@ -34,9 +34,9 @@ class StoreItemViewController: UIViewController {
         self.priceLabel = storeView.priceLabel
         self.sizeStackView = storeView.sizeStackView
         
-        nameLabel.text = "T-Shirt Example"
-        descriptionLabel.text = "T-shirt description alksjdflksjkf slakdjflkasdf aslkjfdlkasf lsakjdflksaf lasjdflkasf lasjdflksa lsajdflks asljflks lsadjfkls sladjfklsa slkjfkls slkdjfkls aslfjklsfj"
-        priceLabel.text = 0.00.toPrice
+        nameLabel.text = storeItem.title
+        descriptionLabel.text = storeItem.itemDescription
+        priceLabel.text = storeItem.price.toPrice
         addSizes()
         storeView.cartBtn.addTarget(self,
                                     action: #selector(addToCart),
@@ -44,8 +44,7 @@ class StoreItemViewController: UIViewController {
     }
     
     private func addSizes() {
-        let arrayExample = ["XS", "S", "M", "L", "XL"]
-        for (index, size) in arrayExample.enumerated() {
+        for (index, size) in storeItem.sizes.enumerated() {
             let isSelected = index == 0
             addSizeItemToStackView(isSelected: isSelected, title: size)
         }

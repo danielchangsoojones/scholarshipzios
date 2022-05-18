@@ -12,6 +12,8 @@ class StoreItemParse: SuperParseObject, PFSubclassing {
     @NSManaged var price: Double
     @NSManaged var title: String
     @NSManaged var coverPhoto: StorePhotoParse
+    @NSManaged var itemDescription: String
+    @NSManaged var sizes: [String]
     
     class func parseClassName() -> String {
         return "StoreItem"
