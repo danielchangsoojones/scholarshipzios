@@ -48,16 +48,13 @@ class StoreItemViewController: UIViewController {
     private func addSizeItemToStackView(isSelected: Bool, title: String) {
         let diameter: CGFloat = 10
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: diameter, height: diameter))
-        if isSelected {
-            button.isSelected = true
-        } else {
+        if !isSelected {
             button.layer.borderColor = UIColor.white.cgColor
             button.layer.borderWidth = 1
         }
         button.backgroundColor = isSelected ? .babyPurple : .clear
         button.layer.cornerRadius = diameter / 2.0
         button.setTitle(title, for: .normal)
-        button.setTitleColor(.babyPurple, for: .selected)
         button.setTitleColor(.white, for: .normal)
         
         sizeStackView.addArrangedSubview(button)

@@ -96,7 +96,7 @@ class StoreItemView: UIView {
         sizeStackView.snp.makeConstraints { make in
             make.leading.equalTo(sizeLabel)
             make.trailing.equalToSuperview()
-            make.top.equalTo(sizeLabel.snp.bottom).offset(5)
+            make.top.equalTo(sizeLabel.snp.bottom).offset(7)
         }
     }
 }
