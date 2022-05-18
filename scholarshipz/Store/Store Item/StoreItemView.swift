@@ -15,6 +15,9 @@ class StoreItemView: UIView {
     let sizeLabel = UILabel()
     let sizeStackView = UIStackView()
     let priceLabel = UILabel()
+    let cartBtn = SpinningButton()
+    
+    private let horizontalInset: CGFloat = 10
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,6 +56,7 @@ class StoreItemView: UIView {
         setSizeLabel()
         setSizeStackView()
         setPriceLabel()
+        setCartBtn()
     }
     
     private func setNameLabel() {
@@ -61,7 +65,7 @@ class StoreItemView: UIView {
         bottomView.addSubview(nameLabel)
         
         nameLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(horizontalInset)
             make.top.equalToSuperview().inset(5)
         }
     }
@@ -109,6 +113,15 @@ class StoreItemView: UIView {
         priceLabel.snp.makeConstraints { make in
             make.leading.equalTo(nameLabel)
             make.bottom.equalToSuperview().inset(10)
+        }
+    }
+    
+    private func setCartBtn() {
+        cartBtn.setTitle("Add to Cart", for: .normal)
+        addSubview(cartBtn)
+        cartBtn.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(horizontalInset)
+            make.centerY.equalTo(priceLabel)
         }
     }
 }

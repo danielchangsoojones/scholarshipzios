@@ -70,9 +70,6 @@ class InfluencerTableViewCell: UITableViewCell, Reusable {
             chatButton.contentEdgeInsets = edgeInsets
         }
         
-        chatButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        //TODO: add the gradient
-        chatButton.backgroundColor = .babyPurple
         chatButton.setTitle("View Gear", for: .normal)
         chatButton.isUserInteractionEnabled = false
         contentView.addSubview(chatButton)
