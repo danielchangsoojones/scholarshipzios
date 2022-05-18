@@ -18,6 +18,7 @@ class StoreItemView: UIView {
     let cartBtn = SpinningButton()
     
     private let horizontalInset: CGFloat = 10
+    private let verticalOffset: CGFloat = 10
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,7 +44,7 @@ class StoreItemView: UIView {
     private func setBottomView() {
         bottomView.backgroundColor = .jaguarBlack
         bottomView.clipsToBounds = true
-        bottomView.layer.cornerRadius = 10
+        bottomView.layer.cornerRadius = 20
         bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         addSubview(bottomView)
         bottomView.snp.makeConstraints { make in
@@ -66,7 +67,7 @@ class StoreItemView: UIView {
         
         nameLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(horizontalInset)
-            make.top.equalToSuperview().inset(5)
+            make.top.equalToSuperview().inset(verticalOffset)
         }
     }
     
@@ -77,8 +78,8 @@ class StoreItemView: UIView {
         bottomView.addSubview(descriptionLabel)
         descriptionLabel.snp.makeConstraints { make in
             make.leading.equalTo(nameLabel)
-            make.trailing.equalToSuperview().inset(5)
-            make.top.equalTo(nameLabel.snp.bottom).offset(5)
+            make.trailing.equalToSuperview().inset(horizontalInset)
+            make.top.equalTo(nameLabel.snp.bottom).offset(verticalOffset)
         }
     }
     
@@ -89,7 +90,7 @@ class StoreItemView: UIView {
         bottomView.addSubview(sizeLabel)
         sizeLabel.snp.makeConstraints { make in
             make.leading.equalTo(nameLabel)
-            make.top.equalTo(descriptionLabel.snp.bottom).offset(5)
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(verticalOffset)
         }
     }
     
@@ -102,7 +103,7 @@ class StoreItemView: UIView {
         sizeStackView.snp.makeConstraints { make in
             make.leading.equalTo(sizeLabel)
             make.trailing.equalToSuperview()
-            make.top.equalTo(sizeLabel.snp.bottom).offset(7)
+            make.top.equalTo(sizeLabel.snp.bottom).offset(verticalOffset)
         }
     }
     
