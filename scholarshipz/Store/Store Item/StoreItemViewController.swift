@@ -13,6 +13,7 @@ class StoreItemViewController: UIViewController {
     var nameLabel: UILabel!
     var descriptionLabel: UILabel!
     var sizeStackView = UIStackView()
+    var priceLabel: UILabel!
     
 //    init(storeItem: StoreItemParse) {
 //        self.storeItem = storeItem
@@ -30,10 +31,12 @@ class StoreItemViewController: UIViewController {
         self.itemImgView = storeView.itemImgView
         self.nameLabel = storeView.nameLabel
         self.descriptionLabel = storeView.descriptionLabel
+        self.priceLabel = storeView.priceLabel
         self.sizeStackView = storeView.sizeStackView
         
         nameLabel.text = "T-Shirt Example"
         descriptionLabel.text = "T-shirt description alksjdflksjkf slakdjflkasdf aslkjfdlkasf lsakjdflksaf lasjdflkasf lasjdflksa lsajdflks asljflks lsadjfkls sladjfklsa slkjfkls slkdjfkls aslfjklsfj"
+        priceLabel.text = 0.00.toPrice
         addSizes()
     }
     

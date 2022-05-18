@@ -14,6 +14,7 @@ class StoreItemView: UIView {
     let descriptionLabel = UILabel()
     let sizeLabel = UILabel()
     let sizeStackView = UIStackView()
+    let priceLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,6 +52,7 @@ class StoreItemView: UIView {
         setDescriptionLabel()
         setSizeLabel()
         setSizeStackView()
+        setPriceLabel()
     }
     
     private func setNameLabel() {
@@ -97,6 +99,16 @@ class StoreItemView: UIView {
             make.leading.equalTo(sizeLabel)
             make.trailing.equalToSuperview()
             make.top.equalTo(sizeLabel.snp.bottom).offset(7)
+        }
+    }
+    
+    private func setPriceLabel() {
+        priceLabel.textColor = .white
+        priceLabel.font = .systemFont(ofSize: 20, weight: .medium)
+        bottomView.addSubview(priceLabel)
+        priceLabel.snp.makeConstraints { make in
+            make.leading.equalTo(nameLabel)
+            make.bottom.equalToSuperview().inset(10)
         }
     }
 }
