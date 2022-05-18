@@ -55,10 +55,7 @@ class CartViewController: UIViewController {
     }
     
     @objc private func orderBtnPressed(sender: UIButton) {
-        sender.isUserInteractionEnabled = false
-        if let button = sender as? SpinningButton {
-            button.startSpinning()
-        }
+        
     }
 }
 
