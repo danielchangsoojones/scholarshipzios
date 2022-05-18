@@ -50,13 +50,30 @@ class StoreItemViewController: UIViewController {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: diameter, height: diameter))
         if !isSelected {
             button.layer.borderColor = UIColor.white.cgColor
-            button.layer.borderWidth = 1
         }
+        button.layer.borderWidth = 1
         button.backgroundColor = isSelected ? .babyPurple : .clear
         button.layer.cornerRadius = diameter / 2.0
         button.setTitle(title, for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self,
+                         action: #selector(sizeSelected(sender:)),
+                         for: .touchUpInside)
         
         sizeStackView.addArrangedSubview(button)
+    }
+    
+    @objc private func sizeSelected(sender: UIButton) {
+        sender.backgroundColor = .babyPurple
+        sender.layer.borderColor = .none
+        
+        for subview in sizeStackView.arrangedSubviews {
+            if let button = subview as? UIButton {
+                if button.titleLabel?.text != sender.titleLabel?.text {
+                    button.backgroundColor = .clear
+                    button.layer.borderColor = UIColor.white.cgColor
+                }
+            }
+        }
     }
 }
