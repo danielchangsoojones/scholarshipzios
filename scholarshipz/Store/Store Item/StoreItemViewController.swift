@@ -38,6 +38,9 @@ class StoreItemViewController: UIViewController {
         descriptionLabel.text = "T-shirt description alksjdflksjkf slakdjflkasdf aslkjfdlkasf lsakjdflksaf lasjdflkasf lasjdflksa lsajdflks asljflks lsadjfkls sladjfklsa slkjfkls slkdjfkls aslfjklsfj"
         priceLabel.text = 0.00.toPrice
         addSizes()
+        storeView.cartBtn.addTarget(self,
+                                    action: #selector(addToCart),
+                                    for: .touchUpInside)
     }
     
     private func addSizes() {
@@ -77,6 +80,24 @@ class StoreItemViewController: UIViewController {
                     button.layer.borderColor = UIColor.white.cgColor
                 }
             }
+        }
+    }
+    
+    @objc private func addToCart() {
+        var selectedSize: String?
+        for subview in sizeStackView.arrangedSubviews {
+            if let button = subview as? UIButton, let title = button.titleLabel?.text, button.backgroundColor == .babyPurple {
+                selectedSize = title
+                break
+            }
+        }
+        
+        if let selectedSize = selectedSize {
+            print(selectedSize)
+        } else {
+            BannerAlert.show(title: "Error",
+                             subtitle: "Could not select size, please try to select a size again",
+                             type: .error)
         }
     }
 }
