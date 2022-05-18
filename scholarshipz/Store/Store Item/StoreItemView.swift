@@ -8,14 +8,16 @@
 import UIKit
 
 class StoreItemView: UIView {
-    let bannerImgView = UIImageView()
+    let itemImgView = UIImageView()
     let nameLabel = UILabel()
     private let bottomView = UIView()
     let descriptionLabel = UILabel()
+    let sizeLabel = UILabel()
+    let sizeStackView = UIStackView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .jaguarBlack
+        self.backgroundColor = .white
         createTopImg()
         setBottomView()
     }
@@ -25,10 +27,10 @@ class StoreItemView: UIView {
     }
     
     private func createTopImg() {
-        bannerImgView.contentMode = .scaleAspectFill
-        bannerImgView.clipsToBounds = true
-        addSubview(bannerImgView)
-        bannerImgView.snp.makeConstraints { make in
+        itemImgView.contentMode = .scaleAspectFill
+        itemImgView.clipsToBounds = true
+        addSubview(itemImgView)
+        itemImgView.snp.makeConstraints { make in
             make.leading.trailing.top.equalToSuperview()
             make.height.equalToSuperview().multipliedBy(0.5)
         }
@@ -42,11 +44,13 @@ class StoreItemView: UIView {
         addSubview(bottomView)
         bottomView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalTo(bannerImgView.snp.bottom)
+            make.top.equalTo(itemImgView.snp.bottom)
         }
         
         setNameLabel()
         setDescriptionLabel()
+        setSizeLabel()
+        setSizeStackView()
     }
     
     private func setNameLabel() {
@@ -63,11 +67,36 @@ class StoreItemView: UIView {
     private func setDescriptionLabel() {
         descriptionLabel.textColor = .white
         descriptionLabel.font = UIFont.systemFont(ofSize: 13, weight: .light)
+        descriptionLabel.numberOfLines = 3
         bottomView.addSubview(descriptionLabel)
         descriptionLabel.snp.makeConstraints { make in
             make.leading.equalTo(nameLabel)
             make.trailing.equalToSuperview().inset(5)
             make.top.equalTo(nameLabel.snp.bottom).offset(5)
+        }
+    }
+    
+    private func setSizeLabel() {
+        sizeLabel.textColor = .white
+        sizeLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        sizeLabel.text = "Size"
+        bottomView.addSubview(sizeLabel)
+        sizeLabel.snp.makeConstraints { make in
+            make.leading.equalTo(nameLabel)
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(5)
+        }
+    }
+    
+    private func setSizeStackView() {
+        bottomView.addSubview(sizeStackView)
+        sizeStackView.axis = .horizontal
+        sizeStackView.distribution = .equalCentering
+        sizeStackView.spacing = 5
+        sizeStackView.alignment = .center
+        sizeStackView.snp.makeConstraints { make in
+            make.leading.equalTo(sizeLabel)
+            make.trailing.equalToSuperview()
+            make.top.equalTo(sizeLabel.snp.bottom).offset(5)
         }
     }
 }

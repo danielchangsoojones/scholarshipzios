@@ -44,7 +44,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     private func setStartingVC() {
-        let vc = ExploreViewController()
+//        let vc = ExploreViewController()
+//        let navController = CustomNavigationController(rootViewController: vc)
+//        set(startingVC: navController)
+        
+        
+        let vc = StoreItemViewController()
         let navController = CustomNavigationController(rootViewController: vc)
         set(startingVC: navController)
     }
