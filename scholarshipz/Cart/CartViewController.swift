@@ -22,9 +22,11 @@ class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        title = "Cart"
         self.view.backgroundColor = .jaguarBlack
         setTableView()
-        
     }
 }
 
