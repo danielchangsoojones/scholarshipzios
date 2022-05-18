@@ -71,7 +71,6 @@ class CartView: UIView {
     private func setTableView() {
         tableView = UITableView()
         tableView.backgroundColor = .clear
-        tableView.reloadData()
         addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()

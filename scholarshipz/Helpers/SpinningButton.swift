@@ -8,8 +8,12 @@
 import UIKit
 
 class SpinningButton: UIButton {
+    private let spinner = UIActivityIndicatorView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setSpinner()
+        setTitle("", for: .disabled)
         backgroundColor = .babyPurple
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
@@ -30,5 +34,24 @@ class SpinningButton: UIButton {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func startSpinning() {
+        spinner.startAnimating()
+        isEnabled = false
+    }
+    
+    func stopSpinning() {
+        spinner.stopAnimating()
+        isEnabled = true
+    }
+    
+    private func setSpinner() {
+        spinner.color = .white
+        addSubview(spinner)
+        spinner.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.height.width.equalTo(100)
+        }
     }
 }

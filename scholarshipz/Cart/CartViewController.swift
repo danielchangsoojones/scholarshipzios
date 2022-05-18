@@ -26,8 +26,12 @@ class CartViewController: UIViewController {
         super.loadView()
         let cartView = CartView(frame: self.view.frame)
         self.view = cartView
+        self.tableView = cartView.tableView
         self.totalLabel = cartView.totalLabel
         self.subtotalLabel = cartView.subtotalLabel
+        cartView.orderBtn.addTarget(self,
+                                    action: #selector(orderBtnPressed(sender:)),
+                                    for: .touchUpInside)
     }
     
     override func viewDidLoad() {
@@ -49,16 +53,20 @@ class CartViewController: UIViewController {
         subtotalLabel.text = "Subtotal: " + total.toPrice
         totalLabel.text = "Total: " + total.toPrice
     }
+    
+    @objc private func orderBtnPressed(sender: UIButton) {
+        sender.isUserInteractionEnabled = false
+        if let button = sender as? SpinningButton {
+            button.startSpinning()
+        }
+    }
 }
 
 extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     private func setTableView() {
-        tableView = UITableView(frame: self.view.frame)
-        tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(cellType: CartTableCell.self)
-        self.view.addSubview(tableView)
         tableView.reloadData()
     }
     
@@ -81,6 +89,7 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     
     @objc private func removeItem(sender: UIButton) {
         Cart.storeItems.remove(at: sender.tag)
+        calculateTotal()
         tableView.reloadData()
     }
 
