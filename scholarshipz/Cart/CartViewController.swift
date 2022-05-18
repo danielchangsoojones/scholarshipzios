@@ -31,6 +31,7 @@ class CartViewController: UIViewController {
 extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     private func setTableView() {
         tableView = UITableView(frame: self.view.frame)
+        tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(cellType: CartTableCell.self)

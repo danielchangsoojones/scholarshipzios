@@ -18,6 +18,7 @@ class CartTableCell: UITableViewCell, Reusable {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setImgView()
         setInfoStackView()
+        backgroundColor = .clear
     }
     
     required init?(coder: NSCoder) {
@@ -27,10 +28,11 @@ class CartTableCell: UITableViewCell, Reusable {
     private func setImgView() {
         imgView.contentMode = .scaleAspectFill
         imgView.clipsToBounds = true
+        imgView.backgroundColor = .red
         contentView.addSubview(imgView)
         imgView.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.top.bottom.equalToSuperview().inset(10)
+            make.leading.equalToSuperview().offset(5)
+            make.top.bottom.equalToSuperview().inset(10).priority(.medium)
             make.height.width.equalTo(100)
         }
     }
@@ -44,6 +46,7 @@ class CartTableCell: UITableViewCell, Reusable {
         contentView.addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.leading.equalTo(imgView.snp.trailing).offset(5)
+            make.trailing.equalToSuperview()
             make.top.bottom.equalTo(imgView)
         }
         
@@ -57,6 +60,7 @@ class CartTableCell: UITableViewCell, Reusable {
         
         removeButton.setTitleColor(.red, for: .normal)
         removeButton.setTitle("remove", for: .normal)
+        removeButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .light)
         stackView.addArrangedSubview(removeButton)
     }
 }
