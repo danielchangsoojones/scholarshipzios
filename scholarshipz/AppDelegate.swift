@@ -48,12 +48,22 @@ extension AppDelegate {
 //        let navController = CustomNavigationController(rootViewController: vc)
 //        set(startingVC: navController)
         
+//        let storeItemParse = StoreItemParse()
+//        storeItemParse.title = "Example T-shirt"
+//        storeItemParse.price = 19.99
+//        storeItemParse.itemDescription = "item_description"
+//        storeItemParse.sizes = ["S", "M", "XL"]
+//        let vc = StoreItemViewController(storeItem: storeItemParse)
+//        let navController = CustomNavigationController(rootViewController: vc)
+//        set(startingVC: navController)
+        
         let storeItemParse = StoreItemParse()
         storeItemParse.title = "Example T-shirt"
         storeItemParse.price = 19.99
         storeItemParse.itemDescription = "item_description"
         storeItemParse.sizes = ["S", "M", "XL"]
-        let vc = StoreItemViewController(storeItem: storeItemParse)
+        Cart.storeItems = [storeItemParse]
+        let vc = CartViewController(selectedSize: "M")
         let navController = CustomNavigationController(rootViewController: vc)
         set(startingVC: navController)
     }

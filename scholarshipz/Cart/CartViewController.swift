@@ -8,13 +8,23 @@
 import UIKit
 
 class CartViewController: UIViewController {
+    private let selectedSize: String
     private var tableView: UITableView!
-
+    
+    init(selectedSize: String) {
+        self.selectedSize = selectedSize
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .jaguarBlack
-
-        // Do any additional setup after loading the view.
+        setTableView()
+        
     }
 }
 
@@ -24,6 +34,8 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(cellType: CartTableCell.self)
+        self.view.addSubview(tableView)
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,11 +59,11 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
         Cart.storeItems.remove(at: sender.tag)
         tableView.reloadData()
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
+
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

@@ -92,7 +92,8 @@ class StoreItemViewController: UIViewController {
         }
         
         if let selectedSize = selectedSize {
-            print(selectedSize)
+            let cartVC = CartViewController(selectedSize: selectedSize)
+            navigationController? .pushViewController(cartVC, animated: true)
         } else {
             BannerAlert.show(title: "Error",
                              subtitle: "Could not select size, please try to select a size again",
