@@ -19,7 +19,15 @@ class SpinningButton: UIButton {
         titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         layer.cornerRadius = 20
         
+        setOriginalInsets()
+    }
+    
+    private func setOriginalInsets() {
         let edgeInsets = UIEdgeInsets(top: 10, left: 14, bottom: 10, right: 14)
+        set(edgeInsets: edgeInsets)
+    }
+    
+    private func set(edgeInsets: UIEdgeInsets) {
         if #available(iOS 15.0, *) {
             var filled = UIButton.Configuration.plain()
             filled.contentInsets = NSDirectionalEdgeInsets(top: edgeInsets.top,
@@ -37,11 +45,13 @@ class SpinningButton: UIButton {
     }
     
     func startSpinning() {
+        set(edgeInsets: UIEdgeInsets(top: 15, left: 50, bottom: 15, right: 50))
         spinner.startAnimating()
         isEnabled = false
     }
     
     func stopSpinning() {
+        setOriginalInsets()
         spinner.stopAnimating()
         isEnabled = true
     }
@@ -51,7 +61,7 @@ class SpinningButton: UIButton {
         addSubview(spinner)
         spinner.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.height.width.equalTo(100)
+            make.height.width.equalTo(150)
         }
     }
 }
