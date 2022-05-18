@@ -7,16 +7,17 @@
 
 import UIKit
 
-class StoreITemView: UIView {
+class StoreItemView: UIView {
     let bannerImgView = UIImageView()
     let nameLabel = UILabel()
     private let bottomView = UIView()
+    let descriptionLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .jaguarBlack
         createTopImg()
-        setCollectionView()
+        setBottomView()
     }
     
     required init?(coder: NSCoder) {
@@ -35,13 +36,23 @@ class StoreITemView: UIView {
     
     private func setBottomView() {
         bottomView.backgroundColor = .jaguarBlack
+        bottomView.clipsToBounds = true
+        bottomView.layer.cornerRadius = 10
+        bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        addSubview(bottomView)
+        bottomView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(bannerImgView.snp.bottom)
+        }
         
+        setNameLabel()
+        setDescriptionLabel()
     }
     
     private func setNameLabel() {
         nameLabel.textColor = .white
         nameLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        addSubview(nameLabel)
+        bottomView.addSubview(nameLabel)
         
         nameLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)
@@ -49,17 +60,14 @@ class StoreITemView: UIView {
         }
     }
     
-    private func setCollectionView() {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 5
-        layout.minimumInteritemSpacing = 5
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .clear
-        addSubview(collectionView)
-        collectionView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalTo(bannerImgView.snp.bottom)
+    private func setDescriptionLabel() {
+        descriptionLabel.textColor = .white
+        descriptionLabel.font = UIFont.systemFont(ofSize: 13, weight: .light)
+        bottomView.addSubview(descriptionLabel)
+        descriptionLabel.snp.makeConstraints { make in
+            make.leading.equalTo(nameLabel)
+            make.trailing.equalToSuperview().inset(5)
+            make.top.equalTo(nameLabel.snp.bottom).offset(5)
         }
     }
 }
