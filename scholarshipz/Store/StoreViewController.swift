@@ -78,4 +78,10 @@ extension StoreViewController: UICollectionViewDelegate, UICollectionViewDataSou
         cell.priceLabel.text = storeItem.price.toPrice
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storeItem = storeItems[indexPath.row]
+        let itemVC = StoreItemViewController(storeItem: storeItem)
+        navigationController?.pushViewController(itemVC, animated: true)
+    }
 }
