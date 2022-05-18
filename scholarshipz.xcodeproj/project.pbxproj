@@ -18,6 +18,7 @@
 		922DFB1E28342BDD009B03C5 /* NumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB1D28342BDD009B03C5 /* NumberExtension.swift */; };
 		922DFB2128342EAD009B03C5 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB2028342EAD009B03C5 /* CustomNavigationController.swift */; };
 		922DFB2428342FD1009B03C5 /* StoreItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB2328342FD1009B03C5 /* StoreItemViewController.swift */; };
+		922DFB26283480DA009B03C5 /* StoreItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB25283480DA009B03C5 /* StoreItemView.swift */; };
 		924E4F25282EE490004DD18E /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F23282EE490004DD18E /* ExploreView.swift */; };
 		924E4F26282EE490004DD18E /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F24282EE490004DD18E /* ExploreViewController.swift */; };
 		924E4F29282EE4A5004DD18E /* InfluencerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F28282EE4A5004DD18E /* InfluencerTableViewCell.swift */; };
@@ -48,6 +49,7 @@
 		922DFB1D28342BDD009B03C5 /* NumberExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberExtension.swift; sourceTree = "<group>"; };
 		922DFB2028342EAD009B03C5 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		922DFB2328342FD1009B03C5 /* StoreItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemViewController.swift; sourceTree = "<group>"; };
+		922DFB25283480DA009B03C5 /* StoreItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemView.swift; sourceTree = "<group>"; };
 		924E4F23282EE490004DD18E /* ExploreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		924E4F24282EE490004DD18E /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		924E4F28282EE4A5004DD18E /* InfluencerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfluencerTableViewCell.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				922DFB2328342FD1009B03C5 /* StoreItemViewController.swift */,
+				922DFB25283480DA009B03C5 /* StoreItemView.swift */,
 			);
 			path = "Store Item";
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				924E4F26282EE490004DD18E /* ExploreViewController.swift in Sources */,
 				924E4F25282EE490004DD18E /* ExploreView.swift in Sources */,
 				924E4F33282EE592004DD18E /* InfluencerParse.swift in Sources */,
+				922DFB26283480DA009B03C5 /* StoreItemView.swift in Sources */,
 				924E4F35282EE5DC004DD18E /* SuperParseObject.swift in Sources */,
 				922DFB2428342FD1009B03C5 /* StoreItemViewController.swift in Sources */,
 				924E4F37282EEAD2004DD18E /* ColorExtension.swift in Sources */,

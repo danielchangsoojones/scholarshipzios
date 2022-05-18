@@ -1,5 +1,5 @@
 //
-//  StoreView.swift
+//  StoreItemView.swift
 //  scholarshipz
 //
 //  Created by Daniel Jones on 5/17/22.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-class StoreView: UIView {
+class StoreITemView: UIView {
     let bannerImgView = UIImageView()
     let nameLabel = UILabel()
-    var collectionView: UICollectionView!
+    private let bottomView = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .jaguarBlack
-        createTopBanner()
+        createTopImg()
         setCollectionView()
     }
     
@@ -23,32 +23,29 @@ class StoreView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createTopBanner() {
+    private func createTopImg() {
         bannerImgView.contentMode = .scaleAspectFill
         bannerImgView.clipsToBounds = true
         addSubview(bannerImgView)
         bannerImgView.snp.makeConstraints { make in
             make.leading.trailing.top.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.3)
+            make.height.equalToSuperview().multipliedBy(0.5)
         }
+    }
+    
+    private func setBottomView() {
+        bottomView.backgroundColor = .jaguarBlack
         
-        let backgroundBlur = UIView()
-        backgroundBlur.backgroundColor = UIColor.jaguarBlack.withAlphaComponent(0.3)
-        bannerImgView.addSubview(backgroundBlur)
-        
+    }
+    
+    private func setNameLabel() {
         nameLabel.textColor = .white
         nameLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        bannerImgView.addSubview(nameLabel)
+        addSubview(nameLabel)
         
         nameLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)
-            make.bottom.equalToSuperview().inset(5)
-        }
-        
-        backgroundBlur.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalTo(nameLabel).offset(-5)
-            make.bottom.equalToSuperview()
+            make.top.equalToSuperview().inset(5)
         }
     }
     
