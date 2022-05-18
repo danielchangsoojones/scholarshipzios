@@ -10,6 +10,8 @@ import UIKit
 class CartViewController: UIViewController {
     private let selectedSize: String
     private var tableView: UITableView!
+    var subtotalLabel: UILabel!
+    var totalLabel: UILabel!
     
     init(selectedSize: String) {
         self.selectedSize = selectedSize
@@ -20,6 +22,14 @@ class CartViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        super.loadView()
+        let cartView = CartView(frame: self.view.frame)
+        self.view = cartView
+        self.totalLabel = cartView.totalLabel
+        self.subtotalLabel = cartView.subtotalLabel
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
@@ -27,6 +37,17 @@ class CartViewController: UIViewController {
         title = "Cart"
         self.view.backgroundColor = .jaguarBlack
         setTableView()
+        calculateTotal()
+    }
+    
+    private func calculateTotal() {
+        var total: Double = 0
+        for storeItem in Cart.storeItems {
+            total += storeItem.price
+        }
+        
+        subtotalLabel.text = "Subtotal: " + total.toPrice
+        totalLabel.text = "Total: " + total.toPrice
     }
 }
 
