@@ -59,6 +59,8 @@ class CartViewController: UIViewController {
     }
     
     @objc private func orderBtnPressed(sender: UIButton) {
+        
+        
         dataStore.getEphemeralKey { stripeResult, error in
             if let stripeResult = stripeResult {
                 STPAPIClient.shared.publishableKey = stripeResult.publishableKey
@@ -67,7 +69,8 @@ class CartViewController: UIViewController {
                 configuration.customer = .init(id: stripeResult.customerID, ephemeralKeySecret: stripeResult.ephemeralKey)
                 // Set `allowsDelayedPaymentMethods` to true if your business can handle payment
                 // methods that complete payment after a delay, like SEPA Debit and Sofort.
-                configuration.allowsDelayedPaymentMethods = true
+                configuration.allowsDelayedPaymentMethods = false
+                
                 self.paymentSheet = PaymentSheet(paymentIntentClientSecret: stripeResult.paymentIntent, configuration: configuration)
                 
                 // MARK: Start the checkout process
