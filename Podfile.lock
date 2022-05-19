@@ -14,6 +14,21 @@ PODS:
   - Reusable/View (4.1.2)
   - SCLAlertView (0.8)
   - SnapKit (5.0.1)
+  - Stripe (21.13.0):
+    - Stripe/Stripe3DS2 (= 21.13.0)
+    - StripeApplePay (= 21.13.0)
+    - StripeCore (= 21.13.0)
+    - StripeUICore (= 21.13.0)
+  - Stripe/Stripe3DS2 (21.13.0):
+    - StripeApplePay (= 21.13.0)
+    - StripeCore (= 21.13.0)
+    - StripeUICore (= 21.13.0)
+  - StripeApplePay (21.13.0):
+    - StripeCore (= 21.13.0)
+  - StripeCore (21.13.0)
+  - StripeUICore (21.13.0):
+    - StripeCore (= 21.13.0)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - BRYXBanner
@@ -22,6 +37,8 @@ DEPENDENCIES:
   - Reusable
   - SCLAlertView
   - SnapKit (~> 5.0.0)
+  - Stripe
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
@@ -31,6 +48,11 @@ SPEC REPOS:
     - Reusable
     - SCLAlertView
     - SnapKit
+    - Stripe
+    - StripeApplePay
+    - StripeCore
+    - StripeUICore
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
@@ -39,7 +61,12 @@ SPEC CHECKSUMS:
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Stripe: 1c350569f719f194d1a58a9564279d236d72c942
+  StripeApplePay: 2ec807acb7f95e948d430e50aa49b6b04475f1a5
+  StripeCore: a855a2f0d2d478afd9c2a3daccfbe6df6708fcc0
+  StripeUICore: a7e450146986fab95293b0164dd37dda7994982b
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 9b687c25e37e95b048b85176c2a5e0f3b4079241
+PODFILE CHECKSUM: a9c41bef3b77d7619ceb5a3951d24de19be71fcf
 
 COCOAPODS: 1.11.2

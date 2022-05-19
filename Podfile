@@ -12,5 +12,7 @@ target 'scholarshipz' do
   pod 'Reusable'
   pod 'BRYXBanner'
   pod 'SCLAlertView'
+  pod 'Stripe'
+  pod 'SwiftyJSON', '~> 4.0'
 
 end

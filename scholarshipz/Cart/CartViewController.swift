@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import Stripe
+import Parse
 
 class CartViewController: UIViewController {
     private let selectedSize: String
     private var tableView: UITableView!
     var subtotalLabel: UILabel!
     var totalLabel: UILabel!
+    var paymentSheet: PaymentSheet?
+    private let dataStore = CartDataStore()
     
     init(selectedSize: String) {
         self.selectedSize = selectedSize
@@ -55,7 +59,35 @@ class CartViewController: UIViewController {
     }
     
     @objc private func orderBtnPressed(sender: UIButton) {
-        
+        dataStore.getEphemeralKey { stripeResult, error in
+            if let stripeResult = stripeResult {
+                STPAPIClient.shared.publishableKey = stripeResult.publishableKey
+                var configuration = PaymentSheet.Configuration()
+                configuration.merchantDisplayName = "GoAthlete"
+                configuration.customer = .init(id: stripeResult.customerID, ephemeralKeySecret: stripeResult.ephemeralKey)
+                // Set `allowsDelayedPaymentMethods` to true if your business can handle payment
+                // methods that complete payment after a delay, like SEPA Debit and Sofort.
+                configuration.allowsDelayedPaymentMethods = true
+                self.paymentSheet = PaymentSheet(paymentIntentClientSecret: stripeResult.paymentIntent, configuration: configuration)
+                
+                // MARK: Start the checkout process
+                self.paymentSheet?.present(from: self) { paymentResult in
+                    // MARK: Handle the payment result
+                    switch paymentResult {
+                    case .completed:
+                      print("Your order is confirmed")
+                    case .canceled:
+                      print("Canceled!")
+                    case .failed(let error):
+                      print("Payment failed: \(error)")
+                    }
+                  }
+            } else if let error = error {
+                BannerAlert.show(with: error)
+            } else {
+                BannerAlert.showUnknownError(functionName: "getEphemeralKey")
+            }
+        }
     }
 }
 
