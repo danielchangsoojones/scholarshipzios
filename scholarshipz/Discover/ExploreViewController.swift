@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ExploreViewController: UIViewController {
     var tableView: UITableView!
@@ -52,11 +53,26 @@ class ExploreViewController: UIViewController {
     
     private func setNavBar() {
         let menuImg = UIImage(named: "menu")
-        let menuBtn = UIBarButtonItem(image: menuImg,
+        let menuBarBtnItem = UIBarButtonItem(image: menuImg,
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(menuPressed))
+        
+        navigationItem.leftBarButtonItem = menuBarBtnItem
+        
+        
+        let cartImg = UIImage(named: "shopping_cart")
+        let cartBtn = UIBarButtonItem(image: cartImg,
                                       style: .plain,
                                       target: self,
-                                      action: #selector(menuPressed))
-        navigationItem.leftBarButtonItem = menuBtn
+                                      action: #selector(shoppingCartPressed))
+        navigationItem.rightBarButtonItem = cartBtn
+    }
+    
+    @objc private func shoppingCartPressed() {
+        let cartVC = CartViewController()
+        self.navigationController?.pushViewController(cartVC,
+                                                      animated: true)
     }
     
     @objc private func menuPressed() {

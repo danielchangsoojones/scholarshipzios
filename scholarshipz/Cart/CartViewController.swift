@@ -10,21 +10,11 @@ import Stripe
 import Parse
 
 class CartViewController: UIViewController {
-    private let selectedSize: String
     private var tableView: UITableView!
     var subtotalLabel: UILabel!
     var totalLabel: UILabel!
     var paymentSheet: PaymentSheet?
     private let dataStore = CartDataStore()
-    
-    init(selectedSize: String) {
-        self.selectedSize = selectedSize
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func loadView() {
         super.loadView()

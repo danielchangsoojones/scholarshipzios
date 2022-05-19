@@ -100,7 +100,7 @@ class StoreItemViewController: UIViewController {
         if let selectedSize = selectedSize {
             let cartItem = Cart(storeItem: storeItem, selectedSize: selectedSize)
             Cart.shared.append(cartItem)
-            let cartVC = CartViewController(selectedSize: selectedSize)
+            let cartVC = CartViewController()
             navigationController? .pushViewController(cartVC, animated: true)
         } else {
             BannerAlert.show(title: "Error",
