@@ -22,6 +22,7 @@ class ShippingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Shipping Address"
         addressTextView.becomeFirstResponder()
     }
     

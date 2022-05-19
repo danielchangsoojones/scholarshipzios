@@ -29,7 +29,7 @@ class ShippingView: UIView {
     
     private func setAddressLabel() {
         addressLabel.textColor = .white
-        addressLabel.text = "Enter Address:"
+        addressLabel.text = "Enter Shipping Address:"
         addSubview(addressLabel)
         addressLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)
@@ -48,7 +48,6 @@ class ShippingView: UIView {
     
     private func setPhoneField() {
         phoneField.placeholder = "Enter Phone Number"
-//        phoneField.backgroundColor = .white
         phoneField.borderActiveColor = .white
         phoneField.borderInactiveColor = .white
         phoneField.placeholderColor = .white
@@ -61,7 +60,7 @@ class ShippingView: UIView {
     }
     
     private func setNextBtn() {
-        nextButton.setTitle("Next", for: .normal)
+        nextButton.setTitle("Place Order", for: .normal)
         addSubview(nextButton)
         nextButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
