@@ -27,6 +27,7 @@
 		922DFB3C2835D3B9009B03C5 /* BaseFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB3B2835D3B9009B03C5 /* BaseFormViewController.swift */; };
 		922DFB3F2835E01E009B03C5 /* ShippingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB3E2835E01E009B03C5 /* ShippingViewController.swift */; };
 		922DFB412835E1E4009B03C5 /* ShippingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB402835E1E4009B03C5 /* ShippingView.swift */; };
+		922DFB442835EA23009B03C5 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB432835EA23009B03C5 /* ConfirmationViewController.swift */; };
 		924E4F25282EE490004DD18E /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F23282EE490004DD18E /* ExploreView.swift */; };
 		924E4F26282EE490004DD18E /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F24282EE490004DD18E /* ExploreViewController.swift */; };
 		924E4F29282EE4A5004DD18E /* InfluencerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F28282EE4A5004DD18E /* InfluencerTableViewCell.swift */; };
@@ -66,6 +67,7 @@
 		922DFB3B2835D3B9009B03C5 /* BaseFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFormViewController.swift; sourceTree = "<group>"; };
 		922DFB3E2835E01E009B03C5 /* ShippingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingViewController.swift; sourceTree = "<group>"; };
 		922DFB402835E1E4009B03C5 /* ShippingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingView.swift; sourceTree = "<group>"; };
+		922DFB432835EA23009B03C5 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		924E4F23282EE490004DD18E /* ExploreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		924E4F24282EE490004DD18E /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		924E4F28282EE4A5004DD18E /* InfluencerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfluencerTableViewCell.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		922DFB2A283579E9009B03C5 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				922DFB422835EA0F009B03C5 /* Confirmation */,
 				922DFB3D2835DFF7009B03C5 /* Shipping */,
 				922DFB2B28357A9C009B03C5 /* CartViewController.swift */,
 				922DFB2D28357AE6009B03C5 /* Cart.swift */,
@@ -215,6 +218,14 @@
 				922DFB402835E1E4009B03C5 /* ShippingView.swift */,
 			);
 			path = Shipping;
+			sourceTree = "<group>";
+		};
+		922DFB422835EA0F009B03C5 /* Confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				922DFB432835EA23009B03C5 /* ConfirmationViewController.swift */,
+			);
+			path = Confirmation;
 			sourceTree = "<group>";
 		};
 		924E4F22282EE40E004DD18E /* Discover */ = {
@@ -404,6 +415,7 @@
 				922DFB1C28342A4A009B03C5 /* StorePhoto.swift in Sources */,
 				922DFB392835BCE9009B03C5 /* CartDataStore.swift in Sources */,
 				924E4F3D28335E9E004DD18E /* StoreViewController.swift in Sources */,
+				922DFB442835EA23009B03C5 /* ConfirmationViewController.swift in Sources */,
 				924E4F26282EE490004DD18E /* ExploreViewController.swift in Sources */,
 				922DFB3028357B60009B03C5 /* CartTableCell.swift in Sources */,
 				924E4F25282EE490004DD18E /* ExploreView.swift in Sources */,

@@ -67,7 +67,7 @@ extension AppDelegate {
 //        let navController = CustomNavigationController(rootViewController: vc)
 //        set(startingVC: navController)
         
-        let vc = ShippingViewController()
+        let vc = ConfirmationViewController()
         let navController = CustomNavigationController(rootViewController: vc)
         set(startingVC: navController)
     }
