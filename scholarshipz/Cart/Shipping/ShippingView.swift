@@ -11,12 +11,14 @@ import TextFieldEffects
 class ShippingView: UIView {
     private let addressLabel = UILabel()
     let addressField = UITextView()
+    let phoneField = HoshiTextField()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .jaguarBlack
         setAddressLabel()
         setTextView()
+        setPhoneField()
     }
     
     required init?(coder: NSCoder) {
@@ -39,6 +41,20 @@ class ShippingView: UIView {
             make.leading.trailing.equalToSuperview().inset(10)
             make.top.equalTo(addressLabel.snp.bottom).offset(10)
             make.height.equalTo(100)
+        }
+    }
+    
+    private func setPhoneField() {
+        phoneField.placeholder = "Enter Phone Number"
+//        phoneField.backgroundColor = .white
+        phoneField.borderActiveColor = .white
+        phoneField.borderInactiveColor = .white
+        phoneField.placeholderColor = .white
+        addSubview(phoneField)
+        phoneField.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(addressField)
+            make.top.equalTo(addressField.snp.bottom).offset(5)
+            make.height.equalTo(50)
         }
     }
     
