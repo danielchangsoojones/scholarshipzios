@@ -48,18 +48,22 @@ class CartViewController: UIViewController {
         calculateTotal()
     }
     
-    private func calculateTotal() {
+    var totalAmount: Double {
         var total: Double = 0
         for cartItem in Cart.shared {
             total += cartItem.storeItem.price
         }
-        
+        return total
+    }
+    
+    private func calculateTotal() {
+        let total = totalAmount
         subtotalLabel.text = "Subtotal: " + total.toPrice
         totalLabel.text = "Total: " + total.toPrice
     }
     
     @objc private func orderBtnPressed(sender: UIButton) {
-        dataStore.getEphemeralKey { stripeResult, error in
+        dataStore.getEphemeralKey(amount: totalAmount) { stripeResult, error in
             if let stripeResult = stripeResult {
                 STPAPIClient.shared.publishableKey = stripeResult.publishableKey
                 var configuration = PaymentSheet.Configuration()

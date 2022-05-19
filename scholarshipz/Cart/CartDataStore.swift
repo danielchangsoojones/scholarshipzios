@@ -17,8 +17,9 @@ struct StripeResult {
 }
 
 class CartDataStore {
-    func getEphemeralKey(completion: @escaping (StripeResult?, Error?) -> Void) {
-        let parameters: [String: Any] = ["amount_in_cents": 2019]
+    func getEphemeralKey(amount: Double, completion: @escaping (StripeResult?, Error?) -> Void) {
+        let amount_in_cents = amount * 100
+        let parameters: [String: Any] = ["amount_in_cents": amount_in_cents]
         PFCloud.callFunction(inBackground: "getStripeEphemeralKey", withParameters: parameters) { (result, error) in
             if let result = result {
                 let json = JSON(result)
