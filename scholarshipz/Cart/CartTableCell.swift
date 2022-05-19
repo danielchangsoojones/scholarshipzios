@@ -28,7 +28,7 @@ class CartTableCell: UITableViewCell, Reusable {
     private func setImgView() {
         imgView.contentMode = .scaleAspectFill
         imgView.clipsToBounds = true
-        imgView.backgroundColor = .red
+        imgView.backgroundColor = .white
         contentView.addSubview(imgView)
         imgView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(5)

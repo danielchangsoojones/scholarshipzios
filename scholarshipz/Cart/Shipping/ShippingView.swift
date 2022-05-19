@@ -33,7 +33,7 @@ class ShippingView: UIView {
         addSubview(addressLabel)
         addressLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)
-            make.top.equalToSuperview().offset(10)
+            make.top.equalTo(self.snp_topMargin).offset(5)
         }
     }
     
@@ -51,6 +51,8 @@ class ShippingView: UIView {
         phoneField.borderActiveColor = .white
         phoneField.borderInactiveColor = .white
         phoneField.placeholderColor = .white
+        phoneField.textColor = .white
+        phoneField.tintColor = .white
         addSubview(phoneField)
         phoneField.snp.makeConstraints { make in
             make.leading.trailing.equalTo(addressField)
