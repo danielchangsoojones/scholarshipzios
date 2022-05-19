@@ -12,6 +12,7 @@ class ShippingView: UIView {
     private let addressLabel = UILabel()
     let addressField = UITextView()
     let phoneField = HoshiTextField()
+    let nextButton = SpinningButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,6 +20,7 @@ class ShippingView: UIView {
         setAddressLabel()
         setTextView()
         setPhoneField()
+        setNextBtn()
     }
     
     required init?(coder: NSCoder) {
@@ -55,6 +57,15 @@ class ShippingView: UIView {
             make.leading.trailing.equalTo(addressField)
             make.top.equalTo(addressField.snp.bottom).offset(5)
             make.height.equalTo(50)
+        }
+    }
+    
+    private func setNextBtn() {
+        nextButton.setTitle("Next", for: .normal)
+        addSubview(nextButton)
+        nextButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(phoneField.snp.bottom).offset(10)
         }
     }
     
