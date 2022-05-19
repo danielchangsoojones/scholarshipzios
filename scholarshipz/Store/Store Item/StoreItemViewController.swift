@@ -41,6 +41,12 @@ class StoreItemViewController: UIViewController {
         storeView.cartBtn.addTarget(self,
                                     action: #selector(addToCart),
                                     for: .touchUpInside)
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        itemImgView.loadFromFile(storeItem.coverPhoto.photo)
     }
     
     private func addSizes() {

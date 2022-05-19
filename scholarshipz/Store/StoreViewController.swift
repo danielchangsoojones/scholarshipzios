@@ -81,7 +81,7 @@ extension StoreViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storeItem = storeItems[indexPath.row]
-//        let itemVC = StoreItemViewController(storeItem: storeItem)
-//        navigationController?.pushViewController(itemVC, animated: true)
+        let itemVC = StoreItemViewController(storeItem: storeItem)
+        navigationController?.pushViewController(itemVC, animated: true)
     }
 }

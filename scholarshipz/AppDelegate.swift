@@ -36,38 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         InfluencerParse.registerSubclass()
         StoreItemParse.registerSubclass()
         StorePhotoParse.registerSubclass()
-        
-        //configure Stripe
-//        STPAPIClient.shared.publishableKey = Configuration.environment.stripePublishableKey
     }
 }
 
 extension AppDelegate {
     private func setStartingVC() {
-//        let vc = ExploreViewController()
-//        let navController = CustomNavigationController(rootViewController: vc)
-//        set(startingVC: navController)
-        
-//        let storeItemParse = StoreItemParse()
-//        storeItemParse.title = "Example T-shirt"
-//        storeItemParse.price = 19.99
-//        storeItemParse.itemDescription = "item_description"
-//        storeItemParse.sizes = ["S", "M", "XL"]
-//        let vc = StoreItemViewController(storeItem: storeItemParse)
-//        let navController = CustomNavigationController(rootViewController: vc)
-//        set(startingVC: navController)
-        
-//        let storeItemParse = StoreItemParse()
-//        storeItemParse.title = "Example T-shirt"
-//        storeItemParse.price = 19.99
-//        storeItemParse.itemDescription = "item_description"
-//        storeItemParse.sizes = ["S", "M", "XL"]
-//        Cart.storeItems = [storeItemParse]
-//        let vc = CartViewController(selectedSize: "M")
-//        let navController = CustomNavigationController(rootViewController: vc)
-//        set(startingVC: navController)
-        
-        let vc = ConfirmationViewController()
+        let vc = ExploreViewController()
         let navController = CustomNavigationController(rootViewController: vc)
         set(startingVC: navController)
     }

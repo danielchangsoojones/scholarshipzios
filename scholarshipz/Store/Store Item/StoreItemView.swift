@@ -32,7 +32,7 @@ class StoreItemView: UIView {
     }
     
     private func createTopImg() {
-        itemImgView.contentMode = .scaleAspectFill
+        itemImgView.contentMode = .scaleAspectFit
         itemImgView.clipsToBounds = true
         addSubview(itemImgView)
         itemImgView.snp.makeConstraints { make in
