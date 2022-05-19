@@ -11,3 +11,4 @@ ${BUILT_PRODUCTS_DIR}/StripeApplePay/StripeApplePay.framework
 ${BUILT_PRODUCTS_DIR}/StripeCore/StripeCore.framework
 ${BUILT_PRODUCTS_DIR}/StripeUICore/StripeUICore.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework

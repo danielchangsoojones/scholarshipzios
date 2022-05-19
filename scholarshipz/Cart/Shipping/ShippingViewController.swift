@@ -8,14 +8,17 @@
 import UIKit
 
 class ShippingViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    private var addressTextView: UITextView!
+    
+    override func loadView() {
+        super.loadView()
+        let shippingView = ShippingView(frame: self.view.frame)
+        self.view = shippingView
+        self.addressTextView = shippingView.addressField
     }
     
-    private func addAddressRow() {
-        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addressTextView.becomeFirstResponder()
     }
-
 }
