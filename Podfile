@@ -14,5 +14,7 @@ target 'scholarshipz' do
   pod 'SCLAlertView'
   pod 'Stripe'
   pod 'SwiftyJSON', '~> 4.0'
+  pod "Former"
+  pod 'TextFieldEffects'
 
 end
