@@ -26,17 +26,14 @@ class ExploreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         loadInfluencers()
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 38))
         imageView.contentMode = .scaleAspectFit
         let logo = UIImage(named: "logo_name")
         imageView.image = logo
         self.navigationItem.titleView = imageView
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+        setNavBar()
     }
     
     private func setup(_ tableView: UITableView) {
@@ -51,6 +48,21 @@ class ExploreViewController: UIViewController {
             self.influencers = influencers
             self.tableView.reloadData()
         }
+    }
+    
+    private func setNavBar() {
+        let menuImg = UIImage(named: "menu")
+        let menuBtn = UIBarButtonItem(image: menuImg,
+                                      style: .plain,
+                                      target: self,
+                                      action: #selector(menuPressed))
+        navigationItem.leftBarButtonItem = menuBtn
+    }
+    
+    @objc private func menuPressed() {
+        let settingsVC = SettingsViewController()
+        self.navigationController?.pushViewController(settingsVC,
+                                                      animated: true)
     }
 }
 

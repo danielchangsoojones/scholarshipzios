@@ -9,7 +9,7 @@ import UIKit
 import Former
 import SCLAlertView
 
-class HomeMenuViewController: BaseFormViewController<Any> {
+class SettingsViewController: BaseFormViewController<Any> {
     let becomeADriverRow = LabelRowFormer<FormLabelCell>()
     let reportDriverRow = LabelRowFormer<FormLabelCell>()
     
