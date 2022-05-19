@@ -29,6 +29,9 @@
 		922DFB412835E1E4009B03C5 /* ShippingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB402835E1E4009B03C5 /* ShippingView.swift */; };
 		922DFB442835EA23009B03C5 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB432835EA23009B03C5 /* ConfirmationViewController.swift */; };
 		922DFB472835F2F8009B03C5 /* ShippingDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB462835F2F8009B03C5 /* ShippingDataStore.swift */; };
+		922DFB4928360AFC009B03C5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB4828360AFC009B03C5 /* SettingsViewController.swift */; };
+		922DFB4B28360B43009B03C5 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB4A28360B43009B03C5 /* MessageHelper.swift */; };
+		922DFB4D28360D09009B03C5 /* TimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB4C28360D09009B03C5 /* TimerExtension.swift */; };
 		924E4F25282EE490004DD18E /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F23282EE490004DD18E /* ExploreView.swift */; };
 		924E4F26282EE490004DD18E /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F24282EE490004DD18E /* ExploreViewController.swift */; };
 		924E4F29282EE4A5004DD18E /* InfluencerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F28282EE4A5004DD18E /* InfluencerTableViewCell.swift */; };
@@ -70,6 +73,9 @@
 		922DFB402835E1E4009B03C5 /* ShippingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingView.swift; sourceTree = "<group>"; };
 		922DFB432835EA23009B03C5 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		922DFB462835F2F8009B03C5 /* ShippingDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingDataStore.swift; sourceTree = "<group>"; };
+		922DFB4828360AFC009B03C5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		922DFB4A28360B43009B03C5 /* MessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
+		922DFB4C28360D09009B03C5 /* TimerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerExtension.swift; sourceTree = "<group>"; };
 		924E4F23282EE490004DD18E /* ExploreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		924E4F24282EE490004DD18E /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		924E4F28282EE4A5004DD18E /* InfluencerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfluencerTableViewCell.swift; sourceTree = "<group>"; };
@@ -177,6 +183,7 @@
 		922DFB1F28342E88009B03C5 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				922DFB4A28360B43009B03C5 /* MessageHelper.swift */,
 				922DFB2028342EAD009B03C5 /* CustomNavigationController.swift */,
 			);
 			path = Navigation;
@@ -209,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				922DFB3B2835D3B9009B03C5 /* BaseFormViewController.swift */,
+				922DFB4828360AFC009B03C5 /* SettingsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -275,6 +283,7 @@
 				924E4F2E282EE520004DD18E /* ImageViewExtension.swift */,
 				924E4F36282EEAD2004DD18E /* ColorExtension.swift */,
 				922DFB1D28342BDD009B03C5 /* NumberExtension.swift */,
+				922DFB4C28360D09009B03C5 /* TimerExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -415,6 +424,7 @@
 			files = (
 				924E4F31282EE541004DD18E /* Structs.swift in Sources */,
 				924E4F39282EED03004DD18E /* SpinningButton.swift in Sources */,
+				922DFB4928360AFC009B03C5 /* SettingsViewController.swift in Sources */,
 				922DFB3228359CFB009B03C5 /* CartView.swift in Sources */,
 				924E4F2C282EE4B6004DD18E /* ExploreDataStore.swift in Sources */,
 				922DFB18283429A9009B03C5 /* StoreDataStore.swift in Sources */,
@@ -429,12 +439,14 @@
 				922DFB442835EA23009B03C5 /* ConfirmationViewController.swift in Sources */,
 				924E4F26282EE490004DD18E /* ExploreViewController.swift in Sources */,
 				922DFB3028357B60009B03C5 /* CartTableCell.swift in Sources */,
+				922DFB4D28360D09009B03C5 /* TimerExtension.swift in Sources */,
 				924E4F25282EE490004DD18E /* ExploreView.swift in Sources */,
 				924E4F33282EE592004DD18E /* InfluencerParse.swift in Sources */,
 				922DFB26283480DA009B03C5 /* StoreItemView.swift in Sources */,
 				922DFB412835E1E4009B03C5 /* ShippingView.swift in Sources */,
 				922DFB2C28357A9C009B03C5 /* CartViewController.swift in Sources */,
 				924E4F35282EE5DC004DD18E /* SuperParseObject.swift in Sources */,
+				922DFB4B28360B43009B03C5 /* MessageHelper.swift in Sources */,
 				922DFB2428342FD1009B03C5 /* StoreItemViewController.swift in Sources */,
 				922DFB3C2835D3B9009B03C5 /* BaseFormViewController.swift in Sources */,
 				924E4F37282EEAD2004DD18E /* ColorExtension.swift in Sources */,
