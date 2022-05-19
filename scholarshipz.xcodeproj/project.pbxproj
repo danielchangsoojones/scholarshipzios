@@ -28,6 +28,7 @@
 		922DFB3F2835E01E009B03C5 /* ShippingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB3E2835E01E009B03C5 /* ShippingViewController.swift */; };
 		922DFB412835E1E4009B03C5 /* ShippingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB402835E1E4009B03C5 /* ShippingView.swift */; };
 		922DFB442835EA23009B03C5 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB432835EA23009B03C5 /* ConfirmationViewController.swift */; };
+		922DFB472835F2F8009B03C5 /* ShippingDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922DFB462835F2F8009B03C5 /* ShippingDataStore.swift */; };
 		924E4F25282EE490004DD18E /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F23282EE490004DD18E /* ExploreView.swift */; };
 		924E4F26282EE490004DD18E /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F24282EE490004DD18E /* ExploreViewController.swift */; };
 		924E4F29282EE4A5004DD18E /* InfluencerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E4F28282EE4A5004DD18E /* InfluencerTableViewCell.swift */; };
@@ -68,6 +69,7 @@
 		922DFB3E2835E01E009B03C5 /* ShippingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingViewController.swift; sourceTree = "<group>"; };
 		922DFB402835E1E4009B03C5 /* ShippingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingView.swift; sourceTree = "<group>"; };
 		922DFB432835EA23009B03C5 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		922DFB462835F2F8009B03C5 /* ShippingDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingDataStore.swift; sourceTree = "<group>"; };
 		924E4F23282EE490004DD18E /* ExploreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		924E4F24282EE490004DD18E /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		924E4F28282EE4A5004DD18E /* InfluencerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfluencerTableViewCell.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		922DFB3D2835DFF7009B03C5 /* Shipping */ = {
 			isa = PBXGroup;
 			children = (
+				922DFB452835F2EA009B03C5 /* Data Store */,
 				922DFB3E2835E01E009B03C5 /* ShippingViewController.swift */,
 				922DFB402835E1E4009B03C5 /* ShippingView.swift */,
 			);
@@ -226,6 +229,14 @@
 				922DFB432835EA23009B03C5 /* ConfirmationViewController.swift */,
 			);
 			path = Confirmation;
+			sourceTree = "<group>";
+		};
+		922DFB452835F2EA009B03C5 /* Data Store */ = {
+			isa = PBXGroup;
+			children = (
+				922DFB462835F2F8009B03C5 /* ShippingDataStore.swift */,
+			);
+			path = "Data Store";
 			sourceTree = "<group>";
 		};
 		924E4F22282EE40E004DD18E /* Discover */ = {
@@ -429,6 +440,7 @@
 				924E4F37282EEAD2004DD18E /* ColorExtension.swift in Sources */,
 				924E4F3F28335EAD004DD18E /* StoreView.swift in Sources */,
 				922DFB2128342EAD009B03C5 /* CustomNavigationController.swift in Sources */,
+				922DFB472835F2F8009B03C5 /* ShippingDataStore.swift in Sources */,
 				9227196B282EC291009ACE70 /* Enviroment.swift in Sources */,
 				922DFB3F2835E01E009B03C5 /* ShippingViewController.swift in Sources */,
 				922DFB1E28342BDD009B03C5 /* NumberExtension.swift in Sources */,

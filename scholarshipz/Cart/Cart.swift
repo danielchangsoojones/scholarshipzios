@@ -8,5 +8,13 @@
 import Foundation
 
 class Cart {
-    static var storeItems: [StoreItemParse] = []
+    let storeItem: StoreItemParse
+    let selectedSize: String
+    
+    init(storeItem: StoreItemParse, selectedSize: String) {
+        self.storeItem = storeItem
+        self.selectedSize = selectedSize
+    }
+    
+    static var shared: [Cart] = []
 }

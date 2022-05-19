@@ -60,7 +60,7 @@ class CartView: UIView {
     }
     
     private func setOrderBtn() {
-        orderBtn.setTitle("Place Order", for: .normal)
+        orderBtn.setTitle("Enter Payment Details", for: .normal)
         bottomView.addSubview(orderBtn)
         orderBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()

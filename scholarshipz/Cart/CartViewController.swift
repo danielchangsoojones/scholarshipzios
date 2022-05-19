@@ -50,8 +50,8 @@ class CartViewController: UIViewController {
     
     private func calculateTotal() {
         var total: Double = 0
-        for storeItem in Cart.storeItems {
-            total += storeItem.price
+        for cartItem in Cart.shared {
+            total += cartItem.storeItem.price
         }
         
         subtotalLabel.text = "Subtotal: " + total.toPrice
@@ -59,8 +59,6 @@ class CartViewController: UIViewController {
     }
     
     @objc private func orderBtnPressed(sender: UIButton) {
-        
-        
         dataStore.getEphemeralKey { stripeResult, error in
             if let stripeResult = stripeResult {
                 STPAPIClient.shared.publishableKey = stripeResult.publishableKey
@@ -78,7 +76,8 @@ class CartViewController: UIViewController {
                     // MARK: Handle the payment result
                     switch paymentResult {
                     case .completed:
-                      print("Your order is confirmed")
+                        let shippingVC = ShippingViewController(stripe_customer_id: stripeResult.customerID)
+                        self.navigationController?.pushViewController(shippingVC, animated: true)
                     case .canceled:
                       print("Canceled!")
                     case .failed(let error):
@@ -103,11 +102,11 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Cart.storeItems.count
+        return Cart.shared.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let storeItem = Cart.storeItems[indexPath.row]
+        let storeItem = Cart.shared[indexPath.row].storeItem
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CartTableCell.self)
         cell.nameLabel.text = storeItem.title
         cell.priceLabel.text = storeItem.price.toPrice
@@ -120,7 +119,7 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     @objc private func removeItem(sender: UIButton) {
-        Cart.storeItems.remove(at: sender.tag)
+        Cart.shared.remove(at: sender.tag)
         calculateTotal()
         tableView.reloadData()
     }
